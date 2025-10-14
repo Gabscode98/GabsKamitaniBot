@@ -1,0 +1,18 @@
+{
+  "name": "gabskamitanibot",
+  "version": "1.0.0",
+  "description": "Bot de Discord con comandos de luchitas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "discord.js": "^14.23.2",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {}
+}
