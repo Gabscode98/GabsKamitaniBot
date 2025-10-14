@@ -1,5 +1,7 @@
 const { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 require('dotenv').config();
+require('./server');
+
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
