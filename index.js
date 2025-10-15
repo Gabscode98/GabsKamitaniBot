@@ -98,6 +98,14 @@ const commands = [
         .setDescription('Usuario al que le harás un claymore')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('devilskiss')
+    .setDescription('Le has aplicado un devils kiss a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un devils kiss')
+        .setRequired(true)
+    ),
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -120,7 +128,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             { body: commands  }
         );
         console.log('Comandos globales registrados correctamente.');
-        
+
     } catch (error) {
         console.error('Error al registrar comandos:', error);
     }
@@ -178,7 +186,10 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1427822622153900134/1427822695231258757/claymore3.gif?ex=68f04302&is=68eef182&hm=591a80a08a0c3b7d31a9add0bce12a89cbad7ad9cbc7b2ace1a333eff0ea4a51&',
             'https://cdn.discordapp.com/attachments/1427822622153900134/1427822695659343912/claymore4.gif?ex=68f04302&is=68eef182&hm=cf38319d86db7a64231f841657516ecc659925f790fffe7b6eed8284359fc3fe&',
             'https://cdn.discordapp.com/attachments/1427822622153900134/1427822696233701457/claymore5.gif?ex=68f04302&is=68eef182&hm=619ee18237ae6966fd0a78e8f8141a73ffe95b7deb2079967294de581a8fc6da&'
-        ]
+        ],
+        devilskiss: [
+            'https://cdn.discordapp.com/attachments/1427860334320025691/1427860390162726993/Devilskiss1.gif?ex=68f0661d&is=68ef149d&hm=e7098f6fa29cea140c8a7f303569e4548155e218164833dd725c6aae06da41d4'
+        ],
     };
     const titles = {
         rko: '💥RKO OUTTA NOWHERE',
@@ -190,7 +201,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         yayo: '¡YAYO FINISHER!',
         phoenixsplash: '¡A VOLAR!',
         hijackbomb: '💣 BOMBAZO',
-        claymore: '¡1,2,3 CLAYMORE!'
+        claymore: '¡1,2,3 CLAYMORE!',
+        devilskiss: '¡A A A A A A A...! ¡YEAHHHHHH!',
     };
 //----------------------------Lógica------------------------------
     client.on('interactionCreate', async interaction => {
