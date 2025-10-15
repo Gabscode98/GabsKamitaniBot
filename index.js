@@ -110,18 +110,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
             { body: commands },
         );
-        console.log('Comandos globales registrados correctamente.');
-
-        if (process.env.GUILD_ID) {
-            await rest.put(
-                Routes.applicationGuildCommands(process.env.CLIENT_ID),
-                { body: commands },
-            );
-            console.log(`Comandos instantáneos cargados al servidor: ${process.env.GUILD_ID}`);
-        }
-
-        console.log('¡Todos los comandos fueron registrados exitosamente!');
-    } catch (error){
+        console.log(`Comandos instantáneos cargados al servidor: ${process.env.GUILD_ID}`);
+    } catch (error) {
         console.error('Error al registrar comandos:', error);
     }
 })();
