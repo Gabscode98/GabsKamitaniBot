@@ -1,5 +1,8 @@
 const { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 require('dotenv').config();
+console.log('TOKEN:', process.env.DISCORD_TOKEN);
+console.log('CLIENT_ID:', process.env.CLIENT_ID);
+console.log('GUILD_ID:', process.env.GUILD_ID);
 require('./server');
 
 
@@ -87,6 +90,14 @@ const commands = [
         .setDescription('Usuario al que le harás un hijack bomb')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('claymore')
+    .setDescription('Le has aplicado un claymore a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un claymore')
+        .setRequired(true)
+    ),
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -96,12 +107,22 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
     try {
         console.log('Registrando comandos...');
         await rest.put(
-            Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+            Routes.applicationGuildCommands(process.env.CLIENT_ID),
             { body: commands },
         );
-        console.log('Los comandos ha sido registrados!');
+        console.log('Comandos globales registrados correctamente.');
+
+        if (process.env.GUILD_ID) {
+            await rest.put(
+                Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+                { body: commands },
+            );
+            console.log(`Comandos instantáneos cargados al servidor: ${process.env.GUILD_ID}`);
+        }
+
+        console.log('¡Todos los comandos fueron registrados exitosamente!');
     } catch (error){
-        console.error(error);
+        console.error('Error al registrar comandos:', error);
     }
 })();
 
@@ -151,17 +172,25 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1427513342330671224/1427523565854654464/hijackbomb1.gif?ex=68ef2c6c&is=68eddaec&hm=58de09bb787c427d2d8fcd835e09993a8a93d76f33d7390c92729caaec536fb2&',
             'https://cdn.discordapp.com/attachments/1427513342330671224/1427523566370558042/hijackbomb2.gif?ex=68ef2c6c&is=68eddaec&hm=cd82d219272de01dd63f2119e36c094ac678d6b6a6dd6c88324044ae58a65ba0&'
         ],
+        claymore: [
+            'https://cdn.discordapp.com/attachments/1427822622153900134/1427822693838753822/claymore1.gif?ex=68f04301&is=68eef181&hm=5bd1e162a2b0d5bb8df4781f4bfa54c6059e1cabe6750b2a4d5ca068c248c8f0&',
+            'https://cdn.discordapp.com/attachments/1427822622153900134/1427822694816288798/claymore2.gif?ex=68f04302&is=68eef182&hm=df90fe381b067bd220ffc30885652e29a0705b50666ffc99b7867c77df679ac1&',
+            'https://cdn.discordapp.com/attachments/1427822622153900134/1427822695231258757/claymore3.gif?ex=68f04302&is=68eef182&hm=591a80a08a0c3b7d31a9add0bce12a89cbad7ad9cbc7b2ace1a333eff0ea4a51&',
+            'https://cdn.discordapp.com/attachments/1427822622153900134/1427822695659343912/claymore4.gif?ex=68f04302&is=68eef182&hm=cf38319d86db7a64231f841657516ecc659925f790fffe7b6eed8284359fc3fe&',
+            'https://cdn.discordapp.com/attachments/1427822622153900134/1427822696233701457/claymore5.gif?ex=68f04302&is=68eef182&hm=619ee18237ae6966fd0a78e8f8141a73ffe95b7deb2079967294de581a8fc6da&'
+        ]
     };
     const titles = {
         rko: '💥RKO OUTTA NOWHERE',
         stunner: '¡STUNNER!',
-        spear: '¡UN SPEAR',
+        spear: '¡UN SPEAR!',
         mesa: '¡OMG!',
         silla: '¡SILLETAZO!' ,
-        escalera: '¡Haz matado a tu rival con un escalerazo',
+        escalera: '¡Haz matado a tu rival con un escalerazo!',
         yayo: '¡YAYO FINISHER!',
         phoenixsplash: '¡A VOLAR!',
         hijackbomb: '💣 BOMBAZO',
+        claymore: '¡1,2,3 CLAYMORE!'
     };
 //----------------------------Lógica------------------------------
     client.on('interactionCreate', async interaction => {
