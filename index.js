@@ -142,7 +142,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         ],
         stunner: [
             'https://cdn.discordapp.com/attachments/1427513486149161066/1427516210408456264/stunner1.gif?ex=68ef2592&is=68edd412&hm=f759edb3bd8ac2ad5bd2f45f1c6a6cc096e4714888e47cbc48bb492b91c1ea43&',
-            'https://cdn.discordapp.com/attachments/1427513486149161066/1427516210777686027/stunner2.gif?ex=68ef2592&is=68edd412&hm=0e5f36927d8cc8fac62e9b0cb46b49bf23308a408d5a0fedcde6af3e96fcd14d&'
+            'https://cdn.discordapp.com/attachments/1427513486149161066/1427516210777686027/stunner2.gif?ex=68ef2592&is=68edd412&hm=0e5f36927d8cc8fac62e9b0cb46b49bf23308a408d5a0fedcde6af3e96fcd14d&',
+            'https://cdn.discordapp.com/attachments/1427513486149161066/1427866425099419708/stunner3.gif?ex=68f06bbc&is=68ef1a3c&hm=2d6fe72c35169d4f8b203afdce6e2ff8e3746599608a1942781b8a26f75c259a'
         ],
         yayo: [
             'https://cdn.discordapp.com/attachments/1427513180770406451/1427515353642176533/yayo1.gif?ex=68ef24c6&is=68edd346&hm=f1b1e0302f32cf7eaaabc761a025503d3ee03d89c580fccf737681a35466e394&',
