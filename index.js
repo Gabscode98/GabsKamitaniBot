@@ -146,6 +146,14 @@ const commands = [
         .setDescription('Usuario al que le harás un ghetto blaster')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('jackhammer')
+    .setDescription('Le aplicarás un jackhammer a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un jackhammer')
+        .setRequired(true)
+    ),
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -257,6 +265,11 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1428556598300770484/1428781077996241116/ghettoblaster1.gif?ex=68f3bf92&is=68f26e12&hm=152a3cc2dbe61252ee14e74e3fab2c68cddf4de62253279957a85b1001715c01',
             'https://cdn.discordapp.com/attachments/1428556598300770484/1428556660175273984/ghettoblaster2.gif?ex=68f2ee91&is=68f19d11&hm=aeda6baf3b481b199b3d360c1558e8aa260ad86f06f06e5b058643e2dec2ec4c&'
         ],
+        jackhammer: [
+            'https://cdn.discordapp.com/attachments/1428783556703944746/1428783622244008069/jackhammer1.gif?ex=68f3c1f1&is=68f27071&hm=236a79772e5303d88fdb3148ce94f90fca67a447581b48fe485d7eb6e66a95d9&',
+            'https://cdn.discordapp.com/attachments/1428783556703944746/1428783622735003758/jackhammer2.gif?ex=68f3c1f1&is=68f27071&hm=38ae2867fb4b5f6f5674a7a0e61f333ac3df9270f2133c49478e2c90a43970f6&',
+            'https://cdn.discordapp.com/attachments/1428783556703944746/1428783623271878926/jackhammer3.gif?ex=68f3c1f1&is=68f27071&hm=9971e96a91cc4d3066a2f0b6c71fa96c29b57776c99ff02b77d4aeba29c31ba5&'
+        ]
     };
     const titles = {
         rko: '💥RKO OUTTA NOWHERE',
@@ -275,6 +288,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         chokeslam: '¡LA GARRA!',
         tombstonepiledriver: '¡LA TUMBA-ROMPECUELLOS! ⚰️',
         ghettoblaster: '¡EL CACHONDO!',
+        jackhammer: '¡JACKHAMMER!',
     };
 //----------------------------Lógica------------------------------
     client.on('interactionCreate', async interaction => {
