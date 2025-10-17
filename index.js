@@ -138,6 +138,14 @@ const commands = [
         .setDescription('Usuario al que le harás un tombstone piledriver')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('ghettoblaster')
+    .setDescription('Le aplicarás un ghetto blaster a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un ghetto blaster')
+        .setRequired(true)
+    ),
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -244,8 +252,11 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1428541228709838970/1428543298309718156/tombstonepiledriver2.gif?ex=68f2e21f&is=68f1909f&hm=497fbbcbbc44c8bf90d74ddde29cc7d953ab94f72c1e2dbd65c43d95654c2dbb&',
             'https://cdn.discordapp.com/attachments/1428541228709838970/1428543299127607306/tombstonepiledriver4.gif?ex=68f2e21f&is=68f1909f&hm=e4f091613573816800cd161926aab0dbd4df7834ad4803449ffc4ddd2070b100&',
             'https://cdn.discordapp.com/attachments/1428541228709838970/1428552280373727325/tombstonepiledriver3.gif?ex=68f2ea7c&is=68f198fc&hm=4570b68193ee8fb7e71d6b6c01b85c3f9fdc4f410bf9ac8fb2214699dad79c2a'
-        ]
-        
+        ],
+        ghettoblaster: [
+            'https://cdn.discordapp.com/attachments/1428556598300770484/1428556659638141058/ghettoblaster1.gif?ex=68f2ee90&is=68f19d10&hm=02f981a8ef475af7bf957b25e4b1b4d4065a1df689e5695dd704b86a48b55189&',
+            'https://cdn.discordapp.com/attachments/1428556598300770484/1428556660175273984/ghettoblaster2.gif?ex=68f2ee91&is=68f19d11&hm=aeda6baf3b481b199b3d360c1558e8aa260ad86f06f06e5b058643e2dec2ec4c&'
+        ],
     };
     const titles = {
         rko: '💥RKO OUTTA NOWHERE',
@@ -262,7 +273,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         headbutt: '¡HEADBUTT! 🤕',
         buckshotlariat: '¡LA RIATOTA!',
         chokeslam: '¡LA GARRA!',
-        tombstonepiledriver: '¡LA TUMBA-ROMPECUELLOS! ⚰️'
+        tombstonepiledriver: '¡LA TUMBA-ROMPECUELLOS! ⚰️',
+        ghettoblaster: '¡EL CACHONDO!',
     };
 //----------------------------Lógica------------------------------
     client.on('interactionCreate', async interaction => {
