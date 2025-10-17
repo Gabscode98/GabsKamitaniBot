@@ -12,7 +12,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const commands = [
     new SlashCommandBuilder()
     .setName('random')
-    .setDescription('Aplica un movimiento aleatorio a un usuario')
+    .setDescription('Aplicarás un movimiento aleatorio a un usuario')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que atacarás aleatoriamente')
@@ -20,7 +20,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('rko')
-    .setDescription('Le has aplicado un RKO brutal a')
+    .setDescription('Le aplicarás un RKO brutal a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás RKO')
@@ -28,7 +28,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('stunner')
-    .setDescription('Le has aplicado un Stunner a')
+    .setDescription('Le aplicarás un Stunner a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás Stunner')
@@ -36,7 +36,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('spear')
-    .setDescription('Le has aplicado un spear a')
+    .setDescription('Le aplicarás un spear a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás spear')
@@ -44,7 +44,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('mesa')
-    .setDescription('Atravesó la mesa con el cuerpo de su rival a')
+    .setDescription('Atravesarás la mesa con el cuerpo de su rival a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás la mesa')
@@ -52,7 +52,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('silla')
-    .setDescription('Le dió con la silla a')
+    .setDescription('Le darás con la silla a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás la silla')
@@ -68,7 +68,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('yayo')
-    .setDescription('Le harás un yayo a')
+    .setDescription('Le aplicarás un yayo a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás la yayo')
@@ -76,7 +76,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('phoenixsplash')
-    .setDescription('Le has aplicado un phoenix splash a')
+    .setDescription('Le aplicarás un phoenix splash a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un phoenix splash')
@@ -84,7 +84,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('hijackbomb')
-    .setDescription('Le has aplicado un hijack bomb a')
+    .setDescription('Le aplicarás un hijack bomb a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un hijack bomb')
@@ -92,7 +92,7 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('claymore')
-    .setDescription('Le has aplicado un claymore a')
+    .setDescription('Le aplicarás un claymore a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un claymore')
@@ -100,10 +100,42 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('devilskiss')
-    .setDescription('Le has aplicado un devils kiss a')
+    .setDescription('Le aplicarás un devils kiss a')
     .addUserOption(option =>
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un devils kiss')
+        .setRequired(true)
+    ),
+    new SlashCommandBuilder()
+    .setName('headbutt')
+    .setDescription('Le aplicarás un headbutt a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un headbutt')
+        .setRequired(true)
+    ),
+    new SlashCommandBuilder()
+    .setName('buckshot lariat')
+    .setDescription('Le aplicarás un buckshot lariat a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un buckshot lariat')
+        .setRequired(true)
+    ),
+    new SlashCommandBuilder()
+    .setName('chokeslam')
+    .setDescription('Le aplicarás un chokeslam a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un chokeslam')
+        .setRequired(true)
+    ),
+    new SlashCommandBuilder()
+    .setName('tombstone piledriver')
+    .setDescription('Le aplicarás un tombstone piledriver a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un tombstone piledriver')
         .setRequired(true)
     ),
 ].map(cmd => cmd.toJSON());
@@ -191,6 +223,29 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         devilskiss: [
             'https://cdn.discordapp.com/attachments/1427860334320025691/1427860390162726993/Devilskiss1.gif?ex=68f0661d&is=68ef149d&hm=e7098f6fa29cea140c8a7f303569e4548155e218164833dd725c6aae06da41d4'
         ],
+        headbutt: [
+            'https://cdn.discordapp.com/attachments/1428545963584127036/1428546028763615333/headbutt1.gif?ex=68f2e4aa&is=68f1932a&hm=5b523637e246148e03fac66d7051260c3aaba41fdb7ce1b9ecd6372f1ef6b79d&',
+            'https://cdn.discordapp.com/attachments/1428545963584127036/1428546029367591022/headbutt2.gif?ex=68f2e4aa&is=68f1932a&hm=53d11eb47ab9ff17f985b71c5a9a1bbcc7c8bcb552eb79739d3f5d15b1ff9e0c&',
+            'https://cdn.discordapp.com/attachments/1428545963584127036/1428546029875364024/headbutt3.gif?ex=68f2e4aa&is=68f1932a&hm=74feed264a943b4e69defe752247f37edc16a78390d94af716dc0a44ff0d15fd&'
+        ],
+        buckshotlariat: [
+            'https://cdn.discordapp.com/attachments/1428541285064773714/1428542670275608607/buckshotlariat1.gif?ex=68f2e189&is=68f19009&hm=ba479de6b1f4072835316edfd14e95d0e026d24c5710f4d61f5270531c56a09e&',
+            'https://cdn.discordapp.com/attachments/1428541285064773714/1428542670774472716/buckshotlariat2.gif?ex=68f2e189&is=68f19009&hm=05bd28c92c0d859861f82cc3631a4f8a8435671be0ca22feb20ca16f12859242&',
+            'https://cdn.discordapp.com/attachments/1428541285064773714/1428542671118532669/buckshotlariat3.gif?ex=68f2e189&is=68f19009&hm=1cecb29cb3c997a1eaf0fea50e12193418a9416a3a6c6382bdba7b88d1a155a3&'
+        ],
+        chokeslam: [
+            'https://cdn.discordapp.com/attachments/1428541503092949002/1428542284948836403/chokeslam1.gif?ex=68f2e12d&is=68f18fad&hm=a5d07fcfd782e9e7d9e46e0cde0c43eda84a65bb63b90a80a611c9b67211f86a&',
+            'https://cdn.discordapp.com/attachments/1428541503092949002/1428542285343232041/chokeslam2.gif?ex=68f2e12d&is=68f18fad&hm=0342b31d7e872bf9cb97165d93540961775266f661b4c7c40fa0e5e2bca240d0&',
+            'https://cdn.discordapp.com/attachments/1428541503092949002/1428542285666324571/chokeslam3.gif?ex=68f2e12d&is=68f18fad&hm=b3a432007a5821749fc5ef93d245f24fe3e569d620e537f53d90a88da9843d4a&',
+            'https://cdn.discordapp.com/attachments/1428541503092949002/1428542286085492969/chokeslam4.gif?ex=68f2e12e&is=68f18fae&hm=36a1274995a048edce233c79b5df39d37dde8f95b91075e92644cbb22e2423ff&'
+        ],
+        tombstonepiledriver: [
+            'https://cdn.discordapp.com/attachments/1428541228709838970/1428543297709674576/tombstonepiledriver1.gif?ex=68f2e21f&is=68f1909f&hm=d1251a65f58f86b93be26798dba5a69ef77c78ca360f611c75050a1e6835cd73&',
+            'https://cdn.discordapp.com/attachments/1428541228709838970/1428543298309718156/tombstonepiledriver2.gif?ex=68f2e21f&is=68f1909f&hm=497fbbcbbc44c8bf90d74ddde29cc7d953ab94f72c1e2dbd65c43d95654c2dbb&',
+            'https://cdn.discordapp.com/attachments/1428541228709838970/1428543299127607306/tombstonepiledriver4.gif?ex=68f2e21f&is=68f1909f&hm=e4f091613573816800cd161926aab0dbd4df7834ad4803449ffc4ddd2070b100&',
+            'https://cdn.discordapp.com/attachments/1428541228709838970/1428552280373727325/tombstonepiledriver3.gif?ex=68f2ea7c&is=68f198fc&hm=4570b68193ee8fb7e71d6b6c01b85c3f9fdc4f410bf9ac8fb2214699dad79c2a'
+        ]
+        
     };
     const titles = {
         rko: '💥RKO OUTTA NOWHERE',
@@ -204,6 +259,10 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         hijackbomb: '💣 BOMBAZO',
         claymore: '¡1,2,3 CLAYMORE!',
         devilskiss: '¡A A A A A A A...! ¡YEAHHHHHH!',
+        headbutt: '¡HEADBUTT! 🤕',
+        buckshotlariat: '¡LA RIATOTA!',
+        chokeslam: '¡LA GARRA!',
+        tombstonepiledriver: '¡LA TUMBA-ROMPECUELLOS! ⚰️'
     };
 //----------------------------Lógica------------------------------
     client.on('interactionCreate', async interaction => {
