@@ -303,7 +303,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         tombstonepiledriver: '¡LA TUMBA-ROMPECUELLOS! ⚰️',
         ghettoblaster: '¡EL CACHONDO!',
         jackhammer: '¡JACKHAMMER!',
-        oblivion : '¡WATCH ME!',
+        oblivion: '¡WATCH ME!',
     };
 //----------------------------Lógica------------------------------
     client.on('interactionCreate', async interaction => {
