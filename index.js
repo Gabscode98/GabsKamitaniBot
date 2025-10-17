@@ -154,6 +154,14 @@ const commands = [
         .setDescription('Usuario al que le harás un jackhammer')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('oblivion')
+    .setDescription('Le aplicarás una oblivion a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás una oblivion')
+        .setRequired(true)
+    ),
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -269,6 +277,12 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1428783556703944746/1428783622244008069/jackhammer1.gif?ex=68f3c1f1&is=68f27071&hm=236a79772e5303d88fdb3148ce94f90fca67a447581b48fe485d7eb6e66a95d9&',
             'https://cdn.discordapp.com/attachments/1428783556703944746/1428783622735003758/jackhammer2.gif?ex=68f3c1f1&is=68f27071&hm=38ae2867fb4b5f6f5674a7a0e61f333ac3df9270f2133c49478e2c90a43970f6&',
             'https://cdn.discordapp.com/attachments/1428783556703944746/1428783623271878926/jackhammer3.gif?ex=68f3c1f1&is=68f27071&hm=9971e96a91cc4d3066a2f0b6c71fa96c29b57776c99ff02b77d4aeba29c31ba5&'
+        ],
+        oblivion: [
+            'https://cdn.discordapp.com/attachments/1428785669030940692/1428786757394235512/oblivion1.gif?ex=68f3c4dc&is=68f2735c&hm=6280a4f9ff59f4b264d0e0223f719907e1d60d9964c22801c0ea0931f2f89b9a&',
+            'https://cdn.discordapp.com/attachments/1428785669030940692/1428786758123913226/oblivion2.gif?ex=68f3c4dc&is=68f2735c&hm=fa4b9a7c8f732a0abadd743b2fde90c8182346ccac3134f35364e63619093496&',
+            'https://cdn.discordapp.com/attachments/1428785669030940692/1428786758912442440/oblivion3.gif?ex=68f3c4dc&is=68f2735c&hm=017b53615ff51aa177ae212b66dfa7c84ae98a05bdb2bed3c42e98827d3a058e&',
+            'https://cdn.discordapp.com/attachments/1428785669030940692/1428786759398985839/oblivion4.gif?ex=68f3c4dd&is=68f2735d&hm=e12025c14e9c12652e7c222b0bc82b54b388d274983daeaf3a94d27ebad35c17&'
         ]
     };
     const titles = {
@@ -289,6 +303,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         tombstonepiledriver: '¡LA TUMBA-ROMPECUELLOS! ⚰️',
         ghettoblaster: '¡EL CACHONDO!',
         jackhammer: '¡JACKHAMMER!',
+        oblivion : '¡WATCH ME!'
     };
 //----------------------------Lógica------------------------------
     client.on('interactionCreate', async interaction => {
