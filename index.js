@@ -115,7 +115,7 @@ const commands = [
         .setRequired(true)
     ),
     new SlashCommandBuilder()
-    .setName('buckshot lariat')
+    .setName('buckshotlariat')
     .setDescription('Le aplicarás un buckshot lariat a')
     .addUserOption(option =>
         option.setName('objetivo')
@@ -131,7 +131,7 @@ const commands = [
         .setRequired(true)
     ),
     new SlashCommandBuilder()
-    .setName('tombstone piledriver')
+    .setName('tombstonepiledriver')
     .setDescription('Le aplicarás un tombstone piledriver a')
     .addUserOption(option =>
         option.setName('objetivo')
