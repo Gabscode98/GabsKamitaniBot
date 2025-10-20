@@ -32,6 +32,72 @@ const gifs = {
         'https://cdn.discordapp.com/attachments/1427513180770406451/1427515354632028261/yayo2.gif?ex=68ef24c6&is=68edd346&hm=323115d37ccae4267a548672661e9e7c2f7397797b26027a0f04400a93802a55&',
         'https://cdn.discordapp.com/attachments/1427513180770406451/1427736445040328804/yayo3.gif?ex=68eff2ae&is=68eea12e&hm=7d8748cf9caacc063accb30550d4269c3fd29fa87b1493e4955b6bed56e32033',
         'https://cdn.discordapp.com/attachments/1427513180770406451/1427736712129413383/yayo4.gif?ex=68eff2ee&is=68eea16e&hm=676f252fe8d97253c14bc3b40af118f85c82cb2924f298ae29956faac7122c06' 
+    ],
+    mesa: [
+        'https://cdn.discordapp.com/attachments/1427513215482466345/1427521452567035914/mesa1.gif?ex=68ef2a74&is=68edd8f4&hm=7045ed083adfc78327c3cb48a3594e4004243fdffe2445bc7226f8782843e0d0&',
+        'https://cdn.discordapp.com/attachments/1427513215482466345/1427521454479773838/mesa2.gif?ex=68ef2a74&is=68edd8f4&hm=185502068e243dab406db6a75f836953137f19d07fbdcdc4ace11ceb8a31b8e9&',
+        'https://cdn.discordapp.com/attachments/1427513215482466345/1427521455842922597/mesa3.gif?ex=68ef2a75&is=68edd8f5&hm=37b34cbae0556a90667bf6ca3a0edaf1aad07170e92aade8f887a1618ac61031&'
+    ],
+    silla: [
+        'https://cdn.discordapp.com/attachments/1427513415689306112/1427521637909266595/silla1.gif?ex=68ef2aa0&is=68edd920&hm=557156e960abcd475647ce43920b494bef8e5739bed89de485166d2db03d8b1a&',
+        'https://cdn.discordapp.com/attachments/1427513415689306112/1427521638194217060/silla2.gif?ex=68ef2aa0&is=68edd920&hm=bdf7f317ecbe52e20c6fa62890efe3bc9644fa52a8d549a0a8f33cad1fd3dee7&',
+        'https://cdn.discordapp.com/attachments/1427513415689306112/1427521638542479413/silla3.gif?ex=68ef2aa0&is=68edd920&hm=367f0c095a799a770e2e071e2c8033cb32dbc8659e7c0895b4545e308db649b4&',
+        'https://cdn.discordapp.com/attachments/1427513415689306112/1427521639125483520/silla4.gif?ex=68ef2aa0&is=68edd920&hm=33ea4bae3ee7cdba143cd7e6d56545a7aff5cf7c8f16e1e07ac74c124307346c&'
+    ],
+    escalera: [
+        'https://cdn.discordapp.com/attachments/1427513401180950610/1427523432039583785/escalera1.gif?ex=68ef2c4c&is=68eddacc&hm=738ee4b677f818b4e0085b345ff5f9ec9087eeb0f5282f25ebc67e9cfbe429cf&',
+        'https://cdn.discordapp.com/attachments/1427513401180950610/1427523432698085437/escalera2.gif?ex=68ef2c4c&is=68eddacc&hm=89d67b5fd97354458fc14f01cb2060fafc6f37e835bf9f44db5ec77c610e1d31&',
+        'https://cdn.discordapp.com/attachments/1427513401180950610/1427523433230630932/escalera3.gif?ex=68ef2c4c&is=68eddacc&hm=070fb71f9420cc4982a3c97c6c46432dc137270cb5c0074a81d09d62683386d8&',
+        'https://cdn.discordapp.com/attachments/1427513401180950610/1427523433901850705/escalera4.gif?ex=68ef2c4c&is=68eddacc&hm=a2c3d38683edb6d7d5557bfd51a362b1f2b892a0e81bd359342cc3505c58774a&'
+    ],
+    phoenixsplash: [
+        'https://cdn.discordapp.com/attachments/1427513298814898297/1427523501665030144/phoenixsplash1.gif?ex=68ef2c5c&is=68eddadc&hm=92a665bc8fcc75ed9f6a387e0390e626291a2cd9c4838fa6b64ca044ed619f96&',
+        'https://cdn.discordapp.com/attachments/1427513298814898297/1427523502138855526/phoenixsplash2.gif?ex=68ef2c5d&is=68eddadd&hm=ef1afecb7576062b3bf96816ea7b42a9dc03ef974433cfccd27f479c4d76492c&'
+    ],
+    hijackbomb: [
+        'https://cdn.discordapp.com/attachments/1427513342330671224/1427523565854654464/hijackbomb1.gif?ex=68ef2c6c&is=68eddaec&hm=58de09bb787c427d2d8fcd835e09993a8a93d76f33d7390c92729caaec536fb2&',
+        'https://cdn.discordapp.com/attachments/1427513342330671224/1427523566370558042/hijackbomb2.gif?ex=68ef2c6c&is=68eddaec&hm=cd82d219272de01dd63f2119e36c094ac678d6b6a6dd6c88324044ae58a65ba0&'
+    ],
+    claymore: [
+        'https://cdn.discordapp.com/attachments/1427822622153900134/1427822693838753822/claymore1.gif?ex=68f04301&is=68eef181&hm=5bd1e162a2b0d5bb8df4781f4bfa54c6059e1cabe6750b2a4d5ca068c248c8f0&',
+        'https://cdn.discordapp.com/attachments/1427822622153900134/1427822694816288798/claymore2.gif?ex=68f04302&is=68eef182&hm=df90fe381b067bd220ffc30885652e29a0705b50666ffc99b7867c77df679ac1&',
+        'https://cdn.discordapp.com/attachments/1427822622153900134/1427822695231258757/claymore3.gif?ex=68f04302&is=68eef182&hm=591a80a08a0c3b7d31a9add0bce12a89cbad7ad9cbc7b2ace1a333eff0ea4a51&',
+        'https://cdn.discordapp.com/attachments/1427822622153900134/1427822695659343912/claymore4.gif?ex=68f04302&is=68eef182&hm=cf38319d86db7a64231f841657516ecc659925f790fffe7b6eed8284359fc3fe&',
+        'https://cdn.discordapp.com/attachments/1427822622153900134/1427822696233701457/claymore5.gif?ex=68f04302&is=68eef182&hm=619ee18237ae6966fd0a78e8f8141a73ffe95b7deb2079967294de581a8fc6da&'
+    ],
+    devilskiss: [
+        'https://cdn.discordapp.com/attachments/1427860334320025691/1427860390162726993/Devilskiss1.gif?ex=68f0661d&is=68ef149d&hm=e7098f6fa29cea140c8a7f303569e4548155e218164833dd725c6aae06da41d4'
+    ],
+    headbutt: [
+        'https://cdn.discordapp.com/attachments/1428545963584127036/1428546028763615333/headbutt1.gif?ex=68f2e4aa&is=68f1932a&hm=5b523637e246148e03fac66d7051260c3aaba41fdb7ce1b9ecd6372f1ef6b79d&',
+        'https://cdn.discordapp.com/attachments/1428545963584127036/1428546029367591022/headbutt2.gif?ex=68f2e4aa&is=68f1932a&hm=53d11eb47ab9ff17f985b71c5a9a1bbcc7c8bcb552eb79739d3f5d15b1ff9e0c&',
+        'https://cdn.discordapp.com/attachments/1428545963584127036/1428546029875364024/headbutt3.gif?ex=68f2e4aa&is=68f1932a&hm=74feed264a943b4e69defe752247f37edc16a78390d94af716dc0a44ff0d15fd&'
+    ],
+    buckshotlariat: [
+        'https://cdn.discordapp.com/attachments/1428541285064773714/1428542670275608607/buckshotlariat1.gif?ex=68f2e189&is=68f19009&hm=ba479de6b1f4072835316edfd14e95d0e026d24c5710f4d61f5270531c56a09e&',
+        'https://cdn.discordapp.com/attachments/1428541285064773714/1428542670774472716/buckshotlariat2.gif?ex=68f2e189&is=68f19009&hm=05bd28c92c0d859861f82cc3631a4f8a8435671be0ca22feb20ca16f12859242&',
+        'https://cdn.discordapp.com/attachments/1428541285064773714/1428542671118532669/buckshotlariat3.gif?ex=68f2e189&is=68f19009&hm=1cecb29cb3c997a1eaf0fea50e12193418a9416a3a6c6382bdba7b88d1a155a3&'
+    ],
+    tombstonepiledriver: [
+        'https://cdn.discordapp.com/attachments/1428541228709838970/1428543297709674576/tombstonepiledriver1.gif?ex=68f2e21f&is=68f1909f&hm=d1251a65f58f86b93be26798dba5a69ef77c78ca360f611c75050a1e6835cd73&',
+        'https://cdn.discordapp.com/attachments/1428541228709838970/1428543298309718156/tombstonepiledriver2.gif?ex=68f2e21f&is=68f1909f&hm=497fbbcbbc44c8bf90d74ddde29cc7d953ab94f72c1e2dbd65c43d95654c2dbb&',
+        'https://cdn.discordapp.com/attachments/1428541228709838970/1428543299127607306/tombstonepiledriver4.gif?ex=68f2e21f&is=68f1909f&hm=e4f091613573816800cd161926aab0dbd4df7834ad4803449ffc4ddd2070b100&',
+        'https://cdn.discordapp.com/attachments/1428541228709838970/1428552280373727325/tombstonepiledriver3.gif?ex=68f2ea7c&is=68f198fc&hm=4570b68193ee8fb7e71d6b6c01b85c3f9fdc4f410bf9ac8fb2214699dad79c2a'
+    ],
+    ghettoblaster: [
+        'https://cdn.discordapp.com/attachments/1428556598300770484/1428781077996241116/ghettoblaster1.gif?ex=68f3bf92&is=68f26e12&hm=152a3cc2dbe61252ee14e74e3fab2c68cddf4de62253279957a85b1001715c01',
+        'https://cdn.discordapp.com/attachments/1428556598300770484/1428556660175273984/ghettoblaster2.gif?ex=68f2ee91&is=68f19d11&hm=aeda6baf3b481b199b3d360c1558e8aa260ad86f06f06e5b058643e2dec2ec4c&'
+    ],
+    jackhammer: [
+        'https://cdn.discordapp.com/attachments/1428783556703944746/1428783622244008069/jackhammer1.gif?ex=68f3c1f1&is=68f27071&hm=236a79772e5303d88fdb3148ce94f90fca67a447581b48fe485d7eb6e66a95d9&',
+        'https://cdn.discordapp.com/attachments/1428783556703944746/1428783622735003758/jackhammer2.gif?ex=68f3c1f1&is=68f27071&hm=38ae2867fb4b5f6f5674a7a0e61f333ac3df9270f2133c49478e2c90a43970f6&',
+        'https://cdn.discordapp.com/attachments/1428783556703944746/1428783623271878926/jackhammer3.gif?ex=68f3c1f1&is=68f27071&hm=9971e96a91cc4d3066a2f0b6c71fa96c29b57776c99ff02b77d4aeba29c31ba5&'
+    ],
+    oblivion: [
+        'https://cdn.discordapp.com/attachments/1428785669030940692/1428786757394235512/oblivion1.gif?ex=68f3c4dc&is=68f2735c&hm=6280a4f9ff59f4b264d0e0223f719907e1d60d9964c22801c0ea0931f2f89b9a&',
+        'https://cdn.discordapp.com/attachments/1428785669030940692/1428786758123913226/oblivion2.gif?ex=68f3c4dc&is=68f2735c&hm=fa4b9a7c8f732a0abadd743b2fde90c8182346ccac3134f35364e63619093496&',
+        'https://cdn.discordapp.com/attachments/1428785669030940692/1428786758912442440/oblivion3.gif?ex=68f3c4dc&is=68f2735c&hm=017b53615ff51aa177ae212b66dfa7c84ae98a05bdb2bed3c42e98827d3a058e&',
+        'https://cdn.discordapp.com/attachments/1428785669030940692/1428786759398985839/oblivion4.gif?ex=68f3c4dd&is=68f2735d&hm=e12025c14e9c12652e7c222b0bc82b54b388d274983daeaf3a94d27ebad35c17&'
     ]
 };
 
@@ -105,6 +171,162 @@ const commands = [
                 name: 'objetivo',
                 type: 6,
                 description: 'Usuario al que atacarás aleatoriamente',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'mesa',
+        description: 'Atravesarás la mesa con el cuerpo de su rival a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás la mesa',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'silla',
+        description: 'Le darás con la silla a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás la silla',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'escalera',
+        description: 'Avientas la escalera a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás la escalera',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'phoenixsplash',
+        description: 'Le aplicarás un phoenix splash a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un phoenix splash',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'hijackbomb',
+        description: 'Le aplicarás un hijack bomb a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un hijack bomb',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'claymore',
+        description: 'Le aplicarás un claymore a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un claymore',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'devilskiss',
+        description: 'Le aplicarás un devils kiss a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un devils kiss',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'headbutt',
+        description: 'Le aplicarás un headbutt a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un headbutt',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'buckshotlariat',
+        description: 'Le aplicarás un buckshot lariat a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un buckshot lariat',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'tombstonepiledriver',
+        description: 'Le aplicarás un tombstone piledriver a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un tombstone piledriver',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'ghettoblaster',
+        description: 'Le aplicarás un ghetto blaster a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un ghetto blaster',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'jackhammer',
+        description: 'Le aplicarás un jackhammer a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás un jackhammer',
+                required: true
+            }
+        ]
+    },
+    {
+        name: 'oblivion',
+        description: 'Le aplicarás una oblivion a',
+        options: [
+            {
+                name: 'objetivo',
+                type: 6,
+                description: 'Usuario al que le harás una oblivion',
                 required: true
             }
         ]
