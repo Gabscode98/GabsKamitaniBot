@@ -1,0 +1,52 @@
+[
+    {
+        "name": "WWE RAW",
+        "mensaje": "2025-10-20 / 18:00 hrs ",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429922881172930751/raw.png?ex=68f7e6f5&is=68f69575&hm=c9d2109ad0d6615bbaf33e8485b2bbaa152282a29fd3339094696fa126779e85&"
+    },
+    {
+        "name": "WWE NXT",
+        "mensaje": "2025-10-21 / 18:00 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429924571599081522/nxt.png?ex=68f7e888&is=68f69708&hm=20971af709e4f80267923690d408643cd83714133db1912581c6ce179e5af6ca"
+    },
+    {
+        "name": "AEW Dynamite",
+        "mensaje": "2025-10-22 / 18:00 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429922880317034619/aewdynamite.png?ex=68f7e6f5&is=68f69575&hm=566fbf1307031db95d81efb7ed88c1f0094962207d5f47ce2c15292c17a94fc4&"
+    },
+    {
+        "name": "NJPW Super Junior Tag League 2025 - Tag 1",
+        "mensaje": "2025-10-23 / 03:30 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429926554657488998/njpw.png?ex=68f7ea61&is=68f698e1&hm=b6f205a6401fa618fd33246ac60394339f6d1bb26d6b02ac2c17f4fb5265bb10&"
+    },
+    {
+        "name": "WWE Smackdown",
+        "mensaje": "2025-10-24 / 18:00 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429922881965395989/smackdown.png?ex=68f7e6f5&is=68f69575&hm=1bd25012d6792e5076c8404c526700a01caa033224ef8f3c3ce09fc6edaa3a23&"
+    },
+    {
+        "name": "NJPW Super Junior Tag League 2025 - Tag 2",
+        "mensaje": "2025-10-24 / 03:30 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429926554657488998/njpw.png?ex=68f7ea61&is=68f698e1&hm=b6f205a6401fa618fd33246ac60394339f6d1bb26d6b02ac2c17f4fb5265bb10&"
+    },
+    {
+        "name": "NJPW Super Junior Tag League 2025 - Tag 3",
+        "mensaje": "2025-10-25 / 02:00 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429926554657488998/njpw.png?ex=68f7ea61&is=68f698e1&hm=b6f205a6401fa618fd33246ac60394339f6d1bb26d6b02ac2c17f4fb5265bb10&"
+    },
+    {
+        "name": "AEW Collision",
+        "mensaje": "2025-10-25 / 18:00 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429922879520247928/aewcollision.png?ex=68f7e6f5&is=68f69575&hm=3d7c49af40cba53d2347f3326f206018879df81d4a27d321e7f343dc2370b6f7&"
+    },
+    {
+        "name": "Lucha Libre AAA: Heroes Inmortales 2025",
+        "mensaje": "2025-10-25 / 21:00 hrs ",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429928336628514856/AAA.png?ex=68f7ec0a&is=68f69a8a&hm=8f260e88091a5d853762951288ffc37d0fd7b57294e4e226709ce0e329dc9bee"
+    },
+    {
+        "name": "NJPW Super Junior Tag League 2025 - Tag 4",
+        "mensaje": "2025-10-26 / 00:00 hrs",
+        "logo": "https://cdn.discordapp.com/attachments/1429921008055226568/1429926554657488998/njpw.png?ex=68f7ea61&is=68f698e1&hm=b6f205a6401fa618fd33246ac60394339f6d1bb26d6b02ac2c17f4fb5265bb10&"
+    }
+]
