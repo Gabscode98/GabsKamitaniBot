@@ -1,9 +1,9 @@
 const { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-require('dotenv').config();
+import dotenv from 'dotenv';
 console.log('TOKEN:', process.env.DISCORD_TOKEN);
 console.log('CLIENT_ID:', process.env.CLIENT_ID);
 console.log('GUILD_ID:', process.env.GUILD_ID);
-require('./server');
+import('./server.js');
 
 const { iniciarAlertas } = require('./alertasEventos');
 
