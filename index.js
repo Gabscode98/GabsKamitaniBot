@@ -5,6 +5,7 @@ console.log('CLIENT_ID:', process.env.CLIENT_ID);
 console.log('GUILD_ID:', process.env.GUILD_ID);
 require('./server');
 
+const { iniciarAlertas } = require('./alertasEventos');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -332,6 +333,12 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
     .setTimestamp();
 
     await interaction.reply({ embeds: [embed] });
+
+    client.once('ready', () =>{
+        console.log(`Bot conectado como ${client.user.tag}`);
+
+        iniciarAlertas(client);
+    })
 });
 
 
