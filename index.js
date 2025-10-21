@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 console.log('TOKEN:', process.env.DISCORD_TOKEN);
 console.log('CLIENT_ID:', process.env.CLIENT_ID);
 console.log('GUILD_ID:', process.env.GUILD_ID);
-import { registrarMovimiento, topMovimientosHandler } from './topMovimientos.js';
+import { topMovimientosHandler } from './topMovimientos.js';
 import('./server.js');
 dotenv.config();
 
