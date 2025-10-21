@@ -1,6 +1,11 @@
 import { REST, Routes, SlashCommandBuilder } from 'discord.js';
 import 'dotenv/config';
 
+console.log('TOKEN:', process.env.DISCORD_TOKEN);
+console.log('CLIENT_ID:', process.env.CLIENT_ID);
+console.log('GUILD_ID:', process.env.GUILD_ID);
+
+
 const commands = [
   new SlashCommandBuilder()
     .setName('topmovimientos')
