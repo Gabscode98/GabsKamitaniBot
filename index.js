@@ -1,12 +1,14 @@
+// ---------------------- CARGA DE DEPENDENCIAS ----------------------
+import 'dotenv/config'; // Carga variables de entorno
 import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } from 'discord.js';
-import dotenv from 'dotenv';
+import { topMovimientosHandler, registrarMovimiento } from './topMovimientos.js';
+import('./server.js'); // Inicia tu server Express
+
 console.log('TOKEN:', process.env.DISCORD_TOKEN);
 console.log('CLIENT_ID:', process.env.CLIENT_ID);
 console.log('GUILD_ID:', process.env.GUILD_ID);
-import { topMovimientosHandler } from './topMovimientos.js';
-import('./server.js');
-dotenv.config();
 
+// ---------------------- CONFIGURACIÓN DEL CLIENT ----------------------
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // --------------------------- Comandos Slash---------------------
@@ -307,43 +309,40 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         oblivion: '¡WATCH ME!',
     };
 //----------------------------Lógica------------------------------
-    client.on('interactionCreate', async interaction => {
-        if (!interaction.isChatInputCommand()) return;
+   client.on('interactionCreate', async interaction => {
+    if (!interaction.isChatInputCommand()) return;
 
-        let commandName = interaction.commandName;
-        const objetivo = interaction.options.getUser('objetivo');
-        
-        // Si el comando es /random -> elegimos aleatorio
-        if (commandName === 'random') {
-            const keys  = Object.keys(gifs);
-            commandName = keys[Math.floor(Math.random() * keys.length)];
+    // COMANDO TOP MOVIMIENTOS
+    if (interaction.commandName === 'topmovimientos') {
+        topMovimientosHandler(interaction);
+        return;
+    }
 
-        if (interaction.commandName === 'topmovimientos') {
-            topMovimientosHandler(interaction);
-            return;
-        }    
+    let commandName = interaction.commandName;
+    const objetivo = interaction.options.getUser('objetivo');
 
-        if (interaction.commandName === 'otrocomando'){
-            //logica de otro comando
-        }
+    // RANDOM
+    if (commandName === 'random') {
+        const keys = Object.keys(gifs);
+        commandName = keys[Math.floor(Math.random() * keys.length)];
+    }
 
-        }
+    // GIF y título
+    const gifList = gifs[commandName];
+    const gif = gifList[Math.floor(Math.random() * gifList.length)];
+    const title = titles[commandName] || '💥 ACCIÓN';
 
-        // Usamos commandName (el verdadero ataque, aleatorio o no)
-        const gifList = gifs[commandName];
-        const gif = gifList[Math.floor(Math.random() * gifList.length)];
-        const title = titles[commandName] || '💥 ACCIÓN';
-
-        registrarMovimiento(commandName); // registra el uso del movimiento
+    // Registrar movimiento
+    registrarMovimiento(commandName);
 
     const embed = new EmbedBuilder()
-    .setTitle(title)
-    .setDescription(`${interaction.user} le aplicó un **${commandName.toUpperCase()}** a ${objetivo}!`)
-    .setImage(gif)
-    .setColor('Red')
-    .setFooter({text: 'Bot creado por GabsKamitani 🔥'})
-    .setTimestamp();
+        .setTitle(title)
+        .setDescription(`${interaction.user} le aplicó un **${commandName.toUpperCase()}** a ${objetivo}!`)
+        .setImage(gif)
+        .setColor('Red')
+        .setFooter({ text: 'Bot creado por GabsKamitani 🔥' })
+        .setTimestamp();
 
     await interaction.reply({ embeds: [embed] });
-    })
+});
 client.login(process.env.DISCORD_TOKEN);
