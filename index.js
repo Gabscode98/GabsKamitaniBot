@@ -1,11 +1,11 @@
-const { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const dotenv = require('dotenv');
-dotenv.config();
+import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } from 'discord.js';
+import dotenv from 'dotenv';
 console.log('TOKEN:', process.env.DISCORD_TOKEN);
 console.log('CLIENT_ID:', process.env.CLIENT_ID);
 console.log('GUILD_ID:', process.env.GUILD_ID);
 import { registrarMovimiento, topMovimientosHandler } from './topMovimientos.js';
 import('./server.js');
+dotenv.config();
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -326,7 +326,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         if (interaction.commandName === 'otrocomando'){
             //logica de otro comando
         }
-        
+
         }
 
         // Usamos commandName (el verdadero ataque, aleatorio o no)
