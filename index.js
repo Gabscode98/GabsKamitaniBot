@@ -4,9 +4,8 @@ dotenv.config();
 console.log('TOKEN:', process.env.DISCORD_TOKEN);
 console.log('CLIENT_ID:', process.env.CLIENT_ID);
 console.log('GUILD_ID:', process.env.GUILD_ID);
+import { registrarMovimiento, topMovimientosHandler } from './topMovimientos.js';
 import('./server.js');
-
-const { iniciarAlertas } = require('./alertasEventos');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -325,6 +324,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         const gif = gifList[Math.floor(Math.random() * gifList.length)];
         const title = titles[commandName] || '💥 ACCIÓN';
 
+        registrarMovimiento(commandName); // registra el uso del movimiento
+
     const embed = new EmbedBuilder()
     .setTitle(title)
     .setDescription(`${interaction.user} le aplicó un **${commandName.toUpperCase()}** a ${objetivo}!`)
@@ -334,13 +335,5 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
     .setTimestamp();
 
     await interaction.reply({ embeds: [embed] });
-
-    client.once('ready', () =>{
-        console.log(`Bot conectado como ${client.user.tag}`);
-
-        iniciarAlertas(client);
     })
-});
-
-
 client.login(process.env.DISCORD_TOKEN);
