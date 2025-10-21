@@ -317,6 +317,16 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         if (commandName === 'random') {
             const keys  = Object.keys(gifs);
             commandName = keys[Math.floor(Math.random() * keys.length)];
+
+        if (interaction.commandName === 'topmovimientos') {
+            topMovimientosHandler(interaction);
+            return;
+        }    
+
+        if (interaction.commandName === 'otrocomando'){
+            //logica de otro comando
+        }
+        
         }
 
         // Usamos commandName (el verdadero ataque, aleatorio o no)
