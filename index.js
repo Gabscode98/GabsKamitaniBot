@@ -173,6 +173,14 @@ const commands = [
         .setDescription('Usuario al que le harás una rockbottom')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('lamistica')
+    .setDescription('Le aplicarás la mistíca a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás la mistíca')
+        .setRequired(true)
+    ),
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
