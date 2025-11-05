@@ -165,6 +165,14 @@ const commands = [
         .setDescription('Usuario al que le harás una oblivion')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('rockbottom')
+    .setDescription('Le aplicarás un rockbottom a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás una rockbottom')
+        .setRequired(true)
+    ),
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -286,6 +294,16 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1428785669030940692/1428786758123913226/oblivion2.gif?ex=68f3c4dc&is=68f2735c&hm=fa4b9a7c8f732a0abadd743b2fde90c8182346ccac3134f35364e63619093496&',
             'https://cdn.discordapp.com/attachments/1428785669030940692/1428786758912442440/oblivion3.gif?ex=68f3c4dc&is=68f2735c&hm=017b53615ff51aa177ae212b66dfa7c84ae98a05bdb2bed3c42e98827d3a058e&',
             'https://cdn.discordapp.com/attachments/1428785669030940692/1428786759398985839/oblivion4.gif?ex=68f3c4dd&is=68f2735d&hm=e12025c14e9c12652e7c222b0bc82b54b388d274983daeaf3a94d27ebad35c17&'
+        ],
+        rockbottom: [
+            'https://cdn.discordapp.com/attachments/1435490916436807740/1435491148138283128/rockbottom1.gif?ex=690c28cf&is=690ad74f&hm=9e5fbfdb9a7ec2fef07fdf8749bf3079a87d0ec53a2284c9e607dc662f262061&',
+            'https://cdn.discordapp.com/attachments/1435490916436807740/1435491148964827206/rockbottom2.gif?ex=690c28d0&is=690ad750&hm=1e101a04abc580c3da61aab862e6e013318340f18c183edd32b45c0ad567e23d&',
+            'https://cdn.discordapp.com/attachments/1435490916436807740/1435491149568671795/rockbottom3.gif?ex=690c28d0&is=690ad750&hm=6268588abd39693841f0bc1f45c8a60ebb39e3fec778abebc444352c47adbc4c&',
+        ],
+        lamistica: [
+            'https://cdn.discordapp.com/attachments/1435494853893947475/1435494923204952237/lamistica1.gif?ex=690c2c53&is=690adad3&hm=0eba92fd5f12e57c4cc6c41427a210ea679b6db7ced0f00cfdcbe4d83d6e5eca&',
+            'https://cdn.discordapp.com/attachments/1435494853893947475/1435494923565666314/lamistica2.gif?ex=690c2c53&is=690adad3&hm=18783cd583e660b1b39ccd8842f82ade70f34a9152f5d291f21e9e84d7cd8e6c&',
+            'https://cdn.discordapp.com/attachments/1435494853893947475/1435494923989155944/lamistica3.gif?ex=690c2c54&is=690adad4&hm=96ab7cf544ef968994315c55123b7587c1cb49fe7d9fb445b0a5d044f3a68d69&'
         ]
     };
     const titles = {
@@ -307,6 +325,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         ghettoblaster: '¡EL CACHONDO!',
         jackhammer: '¡JACKHAMMER!',
         oblivion: '¡WATCH ME!',
+        rockbottom: '¡KNOW YOUR ROLE AND SHUT YOUR MOUTH!',
+        lamistica: '¡LA MISTÍCA SEÑORES!'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
