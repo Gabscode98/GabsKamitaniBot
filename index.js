@@ -181,6 +181,14 @@ const commands = [
         .setDescription('Usuario al que le harás la mistíca')
         .setRequired(true)
     ),
+    new SlashCommandBuilder()
+    .setName('webos')
+    .setDescription('Le aplicarás un webos a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un webos')
+        .setRequired(true)
+    )
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -312,6 +320,10 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1435494853893947475/1435494923204952237/lamistica1.gif?ex=690c2c53&is=690adad3&hm=0eba92fd5f12e57c4cc6c41427a210ea679b6db7ced0f00cfdcbe4d83d6e5eca&',
             'https://cdn.discordapp.com/attachments/1435494853893947475/1435494923565666314/lamistica2.gif?ex=690c2c53&is=690adad3&hm=18783cd583e660b1b39ccd8842f82ade70f34a9152f5d291f21e9e84d7cd8e6c&',
             'https://cdn.discordapp.com/attachments/1435494853893947475/1435494923989155944/lamistica3.gif?ex=690c2c54&is=690adad4&hm=96ab7cf544ef968994315c55123b7587c1cb49fe7d9fb445b0a5d044f3a68d69&'
+        ],
+        webos: [
+            'https://cdn.discordapp.com/attachments/1436086448641015868/1436086751578816662/webos1.gif?ex=690e5382&is=690d0202&hm=6e6a9216391af8a2b906da2ff821dd6c2847f99632f9953a0214803208b34453&',
+            'https://cdn.discordapp.com/attachments/1436086448641015868/1436086752228937788/webos2.gif?ex=690e5382&is=690d0202&hm=8ceb3839e2e581690ada4ccdd8fa13abf6bd31b1595cb60fa32977bc9fcf762d&'
         ]
     };
     const titles = {
@@ -334,7 +346,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         jackhammer: '¡JACKHAMMER!',
         oblivion: '¡WATCH ME!',
         rockbottom: '¡KNOW YOUR ROLE AND SHUT YOUR MOUTH!',
-        lamistica: '¡LA MISTÍCA SEÑORES!'
+        lamistica: '¡LA MISTÍCA SEÑORES!',
+        webos: '¡CHINGA TU MADRE WEY!'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
