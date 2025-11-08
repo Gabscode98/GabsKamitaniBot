@@ -188,6 +188,14 @@ const commands = [
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un webos')
         .setRequired(true)
+    ),
+    new SlashCommandBuilder()
+    .setName('pelon')
+    .setDescription('Le aplicarás un pelon a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un pelon')
+        .setRequired(true)
     )
 ].map(cmd => cmd.toJSON());
 
@@ -324,6 +332,11 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         webos: [
             'https://cdn.discordapp.com/attachments/1436086448641015868/1436086751578816662/webos1.gif?ex=690e5382&is=690d0202&hm=6e6a9216391af8a2b906da2ff821dd6c2847f99632f9953a0214803208b34453&',
             'https://cdn.discordapp.com/attachments/1436086448641015868/1436086752228937788/webos2.gif?ex=690e5382&is=690d0202&hm=8ceb3839e2e581690ada4ccdd8fa13abf6bd31b1595cb60fa32977bc9fcf762d&'
+        ],
+        pelon: [
+            'https://cdn.discordapp.com/attachments/1436578596872523857/1436578676379746354/pelon1.gif?ex=69101da6&is=690ecc26&hm=3939faaf11ab1581ea5c42745ef731d611e9e517bfd142cf149eae7dbc290103&',
+            'https://cdn.discordapp.com/attachments/1436578596872523857/1436578676765360198/pelon2.gif?ex=69101da6&is=690ecc26&hm=71e197e4ae5fb763741e5f9bcaf86fe286778de800d0affd4e75224ba89b482f&',
+            'https://cdn.discordapp.com/attachments/1436578596872523857/1436578677122142279/pelon3.gif?ex=69101da6&is=690ecc26&hm=6e4f3916f75ce3ce73bcedc85331b4b058509d50dee38bb8edc8bd841ffd8b29&'
         ]
     };
     const titles = {
@@ -347,7 +360,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         oblivion: '¡WATCH ME!',
         rockbottom: '¡KNOW YOUR ROLE AND SHUT YOUR MOUTH!',
         lamistica: '¡LA MISTÍCA SEÑORES!',
-        webos: '¡CHINGA TU MADRE WEY!'
+        webos: '¡CHINGA TU MADRE WEY!',
+        pelon: '¡SAPE!'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
