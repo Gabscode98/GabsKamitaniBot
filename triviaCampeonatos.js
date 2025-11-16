@@ -35,5 +35,6 @@ export const trivias = [
   {
     imagen: "",
     respuesta: "WWE Womens Tag Team Championship"
-  }
+  },
+  
 ];

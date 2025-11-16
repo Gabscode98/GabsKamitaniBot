@@ -196,7 +196,15 @@ const commands = [
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un pelon')
         .setRequired(true)
-    )
+    ),
+    new SlashCommandBuilder()
+    .setName('añoña')
+    .setDescription('Le aplicarás un añoña a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un añoña')
+        .setRequired(true)
+    )    
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -337,6 +345,9 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1436578596872523857/1436578676379746354/pelon1.gif?ex=69101da6&is=690ecc26&hm=3939faaf11ab1581ea5c42745ef731d611e9e517bfd142cf149eae7dbc290103&',
             'https://cdn.discordapp.com/attachments/1436578596872523857/1436578676765360198/pelon2.gif?ex=69101da6&is=690ecc26&hm=71e197e4ae5fb763741e5f9bcaf86fe286778de800d0affd4e75224ba89b482f&',
             'https://cdn.discordapp.com/attachments/1436578596872523857/1436578677122142279/pelon3.gif?ex=69101da6&is=690ecc26&hm=6e4f3916f75ce3ce73bcedc85331b4b058509d50dee38bb8edc8bd841ffd8b29&'
+        ],
+        añoña: [
+           'https://cdn.discordapp.com/attachments/1439706431917134016/1439706480935698432/anona1.gif?ex=691b7ea5&is=691a2d25&hm=3a48bb7cf69a1e272b0d047aa16f2966b0f52ecca4aa0593832f81f0f42a85ae' 
         ]
     };
     const titles = {
@@ -361,7 +372,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         rockbottom: '¡KNOW YOUR ROLE AND SHUT YOUR MOUTH!',
         lamistica: '¡LA MISTÍCA SEÑORES!',
         webos: '¡CHINGA TU MADRE WEY!',
-        pelon: '¡SAPE!'
+        pelon: '¡SAPE!',
+        añoña: '¡UN CULIACÁN MOVE!',
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
