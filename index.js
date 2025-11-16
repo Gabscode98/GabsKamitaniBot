@@ -264,7 +264,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1427513415689306112/1427521637909266595/silla1.gif?ex=68ef2aa0&is=68edd920&hm=557156e960abcd475647ce43920b494bef8e5739bed89de485166d2db03d8b1a&',
             'https://cdn.discordapp.com/attachments/1427513415689306112/1427521638194217060/silla2.gif?ex=68ef2aa0&is=68edd920&hm=bdf7f317ecbe52e20c6fa62890efe3bc9644fa52a8d549a0a8f33cad1fd3dee7&',
             'https://cdn.discordapp.com/attachments/1427513415689306112/1427521638542479413/silla3.gif?ex=68ef2aa0&is=68edd920&hm=367f0c095a799a770e2e071e2c8033cb32dbc8659e7c0895b4545e308db649b4&',
-            'https://cdn.discordapp.com/attachments/1427513415689306112/1427521639125483520/silla4.gif?ex=68ef2aa0&is=68edd920&hm=33ea4bae3ee7cdba143cd7e6d56545a7aff5cf7c8f16e1e07ac74c124307346c&'
+            'https://cdn.discordapp.com/attachments/1427513415689306112/1427521639125483520/silla4.gif?ex=68ef2aa0&is=68edd920&hm=33ea4bae3ee7cdba143cd7e6d56545a7aff5cf7c8f16e1e07ac74c124307346c&',
+            'https://cdn.discordapp.com/attachments/1427513415689306112/1439708455106773182/silla5.gif?ex=691b807c&is=691a2efc&hm=5855c73bb8f40a7fa927d31ab384245637132b7e996521c02ff6025756801cf1'
         ],
         escalera: [
             'https://cdn.discordapp.com/attachments/1427513401180950610/1427523432039583785/escalera1.gif?ex=68ef2c4c&is=68eddacc&hm=738ee4b677f818b4e0085b345ff5f9ec9087eeb0f5282f25ebc67e9cfbe429cf&',
