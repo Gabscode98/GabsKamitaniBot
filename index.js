@@ -1,5 +1,7 @@
 // ---------------------- CARGA DE DEPENDENCIAS ----------------------
 import 'dotenv/config';
+import statusHandler from "./status.js";
+import fs from "fs";
 import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 import { topMovimientosHandler, registrarMovimiento } from './topMovimientos.js';
 import('./server.js'); // Inicia tu server Express
@@ -204,7 +206,10 @@ const commands = [
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un añoña')
         .setRequired(true)
-    )    
+    ),
+    new SlashCommandBuilder()
+    .setName('status')
+    .setDescription('Muestra estadísticas del bot')    
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -383,6 +388,11 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         return;
     }
 
+        // COMANDO STATUS
+    if (interaction.commandName === "status") {
+        return statusHandler(interaction, client, gifs);
+    }
+
     let commandName = interaction.commandName;
     const objetivo = interaction.options.getUser('objetivo');
 
@@ -399,6 +409,9 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
 
     // Registrar movimiento
     registrarMovimiento(commandName);
+    // guardar último movimiento utilizado
+    fs.writeFileSync("./lastMove.json", JSON.stringify({ last: commandName }));
+
 
     const embed = new EmbedBuilder()
         .setTitle(title)
