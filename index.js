@@ -1,9 +1,6 @@
 // ---------------------- CARGA DE DEPENDENCIAS ----------------------
 import 'dotenv/config';
-import fs from "fs";
 import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } from 'discord.js';
-import feeds from "./feeds.js";
-import { getNews } from "./rssReader.js";
 import { topMovimientosHandler, registrarMovimiento } from './topMovimientos.js';
 import('./server.js'); // Inicia tu server Express
 
@@ -413,56 +410,4 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
 
     await interaction.reply({ embeds: [embed] });
 });
-// ---------------------- NOTICIAS AUTOMÁTICAS ----------------------
-const CHANNEL_ID = "824072966895566910"; // <-- CAMBIA ESTO
-
-let cache = [];
-if (fs.existsSync("./cache.json")) {
-  cache = JSON.parse(fs.readFileSync("./cache.json", "utf8"));
-}
-
-async function publicarNoticias() {
-  const channel = await client.channels.fetch(CHANNEL_ID);
-  if (!channel) return console.error("❌ Canal no encontrado");
-
-  let nuevas = [];
-
-  for (const feed of feeds) {
-    const noticias = await getNews(feed.url);
-
-    noticias.forEach(n => {
-      if (!cache.includes(n.link)) {
-        nuevas.push({ ...n, source: feed.name });
-        cache.push(n.link);
-      }
-    });
-  }
-
-  fs.writeFileSync("./cache.json", JSON.stringify(cache, null, 2));
-
-  if (nuevas.length === 0) {
-    console.log("No hay noticias nuevas.");
-    return;
-  }
-
-  for (const noticia of nuevas) {
-    const msg = `📰 **${noticia.title}**
-📌 **Fuente:** ${noticia.source}
-🔗 ${noticia.link}
-🕒 ${noticia.pubDate}`;
-
-    await channel.send(msg);
-  }
-
-  console.log("Noticias enviadas.");
-}
-
-client.on("ready", () => {
-  publicarNoticias();
-
-  setInterval(() => {
-    publicarNoticias();
-  }, 3 * 60 * 60 * 1000); // cada 3 horas
-});
-
 client.login(process.env.DISCORD_TOKEN);
