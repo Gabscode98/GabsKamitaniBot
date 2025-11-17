@@ -410,7 +410,10 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
     // Registrar movimiento
     registrarMovimiento(commandName);
     // guardar último movimiento utilizado
-    fs.writeFileSync("./lastMove.json", JSON.stringify({ last: commandName }));
+    fs.writeFileSync("./lastMove.json", JSON.stringify({
+    move: commandName,
+    user: interaction.user.username
+}));
 
 
     const embed = new EmbedBuilder()
