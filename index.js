@@ -385,7 +385,11 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1440161778938941460/1440162262374416445/gushi2.gif?ex=691d2720&is=691bd5a0&hm=dfe65b5c1c2402fa1a05923db04fde442ea0f914c31495b0e950a3e13304c653&',
             'https://cdn.discordapp.com/attachments/1440161778938941460/1440162262752034912/gushi3.gif?ex=691d2720&is=691bd5a0&hm=d33679a58b53673213deb42bc2737c8177a187bf42d809e6ae50332dec1e12e2&',
             'https://cdn.discordapp.com/attachments/1440161778938941460/1440162263121137676/gushi4.gif?ex=691d2720&is=691bd5a0&hm=1906dd0dd3cbdc11a5805bd79145853556ae9fa965bd6429fac22dd7272dbf5a&',
-            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162263515529256/gushi5.gif?ex=691d2720&is=691bd5a0&hm=d513b681b6ea4c5c24b6e2bea2650cabd55c89e72e85119a3436143af7c5229d&'
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162263515529256/gushi5.gif?ex=691d2720&is=691bd5a0&hm=d513b681b6ea4c5c24b6e2bea2650cabd55c89e72e85119a3436143af7c5229d&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440169660850110679/gushi7.gif?ex=691d2e04&is=691bdc84&hm=31c43d0865bca681deb52a358c42b4dbbc1c2b310508283929bd009399096b1b&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440169661223145564/gushi8.gif?ex=691d2e04&is=691bdc84&hm=8174d3650d7aacf9616ed9e91bdb4af61edf5cbb2d04a426efcf2f4b89fd2db4&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440169661550559382/gushi9.gif?ex=691d2e04&is=691bdc84&hm=eb613a265fe94c44fed00a2fc7bb94134c04d235804b3f6500563fa76e5e78f8&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440169661839704074/gushi10.gif?ex=691d2e04&is=691bdc84&hm=daf1aa043eb444f771e2c97f0bffed98e9bf5970993022521bc9f68c0d0fe1a2&'
         ]
     };
     const titles = {
