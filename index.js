@@ -209,7 +209,16 @@ const commands = [
     ),
     new SlashCommandBuilder()
     .setName('status')
-    .setDescription('Muestra estadísticas del bot')    
+    .setDescription('Muestra estadísticas del bot'),
+    
+    new SlashCommandBuilder()
+    .setName('AA')
+    .setDescription('Le aplicarás un attitude adjustment a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un attitude adjustment')
+        .setRequired(true)
+    ),    
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -250,7 +259,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1427513180770406451/1427515353642176533/yayo1.gif?ex=68ef24c6&is=68edd346&hm=f1b1e0302f32cf7eaaabc761a025503d3ee03d89c580fccf737681a35466e394&',
             'https://cdn.discordapp.com/attachments/1427513180770406451/1427515354632028261/yayo2.gif?ex=68ef24c6&is=68edd346&hm=323115d37ccae4267a548672661e9e7c2f7397797b26027a0f04400a93802a55&',
             'https://cdn.discordapp.com/attachments/1427513180770406451/1427736445040328804/yayo3.gif?ex=68eff2ae&is=68eea12e&hm=7d8748cf9caacc063accb30550d4269c3fd29fa87b1493e4955b6bed56e32033',
-            'https://cdn.discordapp.com/attachments/1427513180770406451/1427736712129413383/yayo4.gif?ex=68eff2ee&is=68eea16e&hm=676f252fe8d97253c14bc3b40af118f85c82cb2924f298ae29956faac7122c06' 
+            'https://cdn.discordapp.com/attachments/1427513180770406451/1427736712129413383/yayo4.gif?ex=68eff2ee&is=68eea16e&hm=676f252fe8d97253c14bc3b40af118f85c82cb2924f298ae29956faac7122c06',
+            'https://cdn.discordapp.com/attachments/1440110336026873959/1440112005108465724/yayo5.gif?ex=691cf852&is=691ba6d2&hm=e386738bf144342fee4c377771c7e24322360ff742067fe87550911af667f540&' 
         ],
         spear: [
             'https://cdn.discordapp.com/attachments/1427513157689282602/1427521373852401696/spear1.gif?ex=68ef2a61&is=68edd8e1&hm=cc60a11c12611ce781cfd22874d8650b6eb74ec58d0e8e6b139c7ea8781753d3&',
@@ -351,6 +361,15 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         ],
         añoña: [
            'https://cdn.discordapp.com/attachments/1439706431917134016/1439706480935698432/anona1.gif?ex=691b7ea5&is=691a2d25&hm=3a48bb7cf69a1e272b0d047aa16f2966b0f52ecca4aa0593832f81f0f42a85ae' 
+        ],
+        AA: [
+            'https://cdn.discordapp.com/attachments/1440105986202275921/1440108677599334410/AA1.gif?ex=691cf538&is=691ba3b8&hm=76d08908a7e128b7d09b438961ad889930dea0440744f2307a1566bd3b9deba3',
+            'https://cdn.discordapp.com/attachments/1440105986202275921/1440108711699021936/AA2.gif?ex=691cf540&is=691ba3c0&hm=6165ad119c7618977197e71db124401bd4d57d2e5c8dd3caf17815a27959970f&',
+            'https://cdn.discordapp.com/attachments/1440105986202275921/1440108712122519664/AA3.gif?ex=691cf540&is=691ba3c0&hm=ed03596194d443dfc394a47c5e6c7a6ba18473f99e0b443dbbaa164285d25efa&',
+            'https://cdn.discordapp.com/attachments/1440105986202275921/1440108742002610308/AA4.gif?ex=691cf548&is=691ba3c8&hm=cac43ade04b3baa939da767be36904495681d8c9b6b3cf1dbeba6af19c85fa2f',
+            'https://cdn.discordapp.com/attachments/1440105986202275921/1440108784084324493/AA5.gif?ex=691cf552&is=691ba3d2&hm=e1230712ad9a5526baad569c42679508785b6e254f88cddf10ba5e963f1c58e5',
+            'https://cdn.discordapp.com/attachments/1440105986202275921/1440108819203231796/AA6.gif?ex=691cf55a&is=691ba3da&hm=4a11b043451511025d70d0bf228988a980f956961640fc56c891b8160eb8b80f&',
+            'https://cdn.discordapp.com/attachments/1440105986202275921/1440108819488178238/AA7.gif?ex=691cf55a&is=691ba3da&hm=ac5b8d5d9860cc6b504a97e252aa28699ea31a5b68a637390b9e0e1c295132f6&'
         ]
     };
     const titles = {
@@ -377,6 +396,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         webos: '¡CHINGA TU MADRE WEY!',
         pelon: '¡SAPE!',
         añoña: '¡UN CULIACÁN MOVE!',
+        AA: '¡ATTITUDE ADJUSTMENT!'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
