@@ -5,10 +5,10 @@
   "mesa": 0,
   "silla": 19,
   "escalera": 0,
-  "yayo": 0,
+  "yayo": 1,
   "phoenixsplash": 0,
   "hijackbomb": 0,
-  "claymore": 0,
+  "claymore": 1,
   "devilskiss": 0,
   "headbutt": 0,
   "buckshotlariat": 0,
@@ -21,5 +21,6 @@
   "lamistica": 1,
   "webos": 3,
   "pelon": 2,
-  "añoña": 3
+  "añoña": 3,
+  "attitude": 2
 }

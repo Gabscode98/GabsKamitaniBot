@@ -219,6 +219,14 @@ const commands = [
         .setDescription('Usuario al que le harás un attitude adjustment')
         .setRequired(true)
     ),    
+    new SlashCommandBuilder()
+    .setName('gushi')
+    .setDescription('Le aplicarás un gushi a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un gushi')
+        .setRequired(true)
+    ),    
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -370,6 +378,14 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1440105986202275921/1440108784084324493/AA5.gif?ex=691cf552&is=691ba3d2&hm=e1230712ad9a5526baad569c42679508785b6e254f88cddf10ba5e963f1c58e5',
             'https://cdn.discordapp.com/attachments/1440105986202275921/1440108819203231796/AA6.gif?ex=691cf55a&is=691ba3da&hm=4a11b043451511025d70d0bf228988a980f956961640fc56c891b8160eb8b80f&',
             'https://cdn.discordapp.com/attachments/1440105986202275921/1440108819488178238/AA7.gif?ex=691cf55a&is=691ba3da&hm=ac5b8d5d9860cc6b504a97e252aa28699ea31a5b68a637390b9e0e1c295132f6&'
+        ],
+        gushi: [
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162261305131128/gushi6.gif?ex=691d2720&is=691bd5a0&hm=c18674086be8b0c7fe7a5519eee3d31220ad18f9f44529b132c94cdd32755256&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162261946863696/gushi1.gif?ex=691d2720&is=691bd5a0&hm=af4daf5cf6065665973f45dc165b544115cb07e45fce79dfbd5b987828f0b5d2&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162262374416445/gushi2.gif?ex=691d2720&is=691bd5a0&hm=dfe65b5c1c2402fa1a05923db04fde442ea0f914c31495b0e950a3e13304c653&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162262752034912/gushi3.gif?ex=691d2720&is=691bd5a0&hm=d33679a58b53673213deb42bc2737c8177a187bf42d809e6ae50332dec1e12e2&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162263121137676/gushi4.gif?ex=691d2720&is=691bd5a0&hm=1906dd0dd3cbdc11a5805bd79145853556ae9fa965bd6429fac22dd7272dbf5a&',
+            'https://cdn.discordapp.com/attachments/1440161778938941460/1440162263515529256/gushi5.gif?ex=691d2720&is=691bd5a0&hm=d513b681b6ea4c5c24b6e2bea2650cabd55c89e72e85119a3436143af7c5229d&'
         ]
     };
     const titles = {
@@ -396,7 +412,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         webos: '¡CHINGA TU MADRE WEY!',
         pelon: '¡SAPE!',
         añoña: '¡UN CULIACÁN MOVE!',
-        attitude: '¡ATTITUDE ADJUSTMENT!'
+        attitude: '¡ATTITUDE ADJUSTMENT!',
+        gushi: '¡Eh ya we!'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
