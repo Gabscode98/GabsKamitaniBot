@@ -226,7 +226,15 @@ const commands = [
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un gushi')
         .setRequired(true)
-    ),    
+    ),  
+    new SlashCommandBuilder()
+    .setName('zambra')
+    .setDescription('Le aplicarás un zambra a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un zambra')
+        .setRequired(true)
+    ),      
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -390,6 +398,14 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1440161778938941460/1440169661223145564/gushi8.gif?ex=691d2e04&is=691bdc84&hm=8174d3650d7aacf9616ed9e91bdb4af61edf5cbb2d04a426efcf2f4b89fd2db4&',
             'https://cdn.discordapp.com/attachments/1440161778938941460/1440169661550559382/gushi9.gif?ex=691d2e04&is=691bdc84&hm=eb613a265fe94c44fed00a2fc7bb94134c04d235804b3f6500563fa76e5e78f8&',
             'https://cdn.discordapp.com/attachments/1440161778938941460/1440169661839704074/gushi10.gif?ex=691d2e04&is=691bdc84&hm=daf1aa043eb444f771e2c97f0bffed98e9bf5970993022521bc9f68c0d0fe1a2&'
+        ],
+        zambra: [
+            'https://cdn.discordapp.com/attachments/1440172033995702393/1440172123661271131/zambra1.gif?ex=691d304f&is=691bdecf&hm=173961af3db7f7bd878e22407ebeac6ec93ae054ae7a0fd98c7e4f26db4dc6f7&',
+            'https://cdn.discordapp.com/attachments/1440172033995702393/1440172124126974162/zambra2.gif?ex=691d304f&is=691bdecf&hm=d7232b192a21320831711afe368fbcbbeae03ab82c87763a67348941cb1e6bee&',
+            'https://cdn.discordapp.com/attachments/1440172033995702393/1440172124567371826/zambra3.gif?ex=691d304f&is=691bdecf&hm=bed1c09753de7061cbf539a398cb2ef43b05a07eb434fc7e223bd1c7f08ed0e9&',
+            'https://cdn.discordapp.com/attachments/1440172033995702393/1440172125041197176/zambra4.gif?ex=691d304f&is=691bdecf&hm=6d15e3deb9fb8eb6f6256c26bc8e090e116fca8604176aa4cc26108b980e573f&',
+            'https://cdn.discordapp.com/attachments/1440172033995702393/1440172125519478886/zambra5.gif?ex=691d304f&is=691bdecf&hm=2a27a17648cc1059336c64904e076567d4f19c4ca23fec743b87addf9de2cab8&',
+            'https://cdn.discordapp.com/attachments/1440172033995702393/1440172125913612348/zambra6.gif?ex=691d304f&is=691bdecf&hm=f32106d7e5d37b4578026122485db30511c0e58550d391560c97b519648016bd&'
         ]
     };
     const titles = {
@@ -417,7 +433,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         pelon: '¡SAPE!',
         añoña: '¡UN CULIACÁN MOVE!',
         attitude: '¡ATTITUDE ADJUSTMENT!',
-        gushi: '¡Eh ya we!'
+        gushi: '¡E YA WE!',
+        zambra: '¡YEET!'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
