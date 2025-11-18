@@ -212,7 +212,7 @@ const commands = [
     .setDescription('Muestra estadísticas del bot'),
     
     new SlashCommandBuilder()
-    .setName('AA')
+    .setName('attitude')
     .setDescription('Le aplicarás un attitude adjustment a')
     .addUserOption(option =>
         option.setName('objetivo')
@@ -362,7 +362,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         añoña: [
            'https://cdn.discordapp.com/attachments/1439706431917134016/1439706480935698432/anona1.gif?ex=691b7ea5&is=691a2d25&hm=3a48bb7cf69a1e272b0d047aa16f2966b0f52ecca4aa0593832f81f0f42a85ae' 
         ],
-        AA: [
+        attitude: [
             'https://cdn.discordapp.com/attachments/1440105986202275921/1440108677599334410/AA1.gif?ex=691cf538&is=691ba3b8&hm=76d08908a7e128b7d09b438961ad889930dea0440744f2307a1566bd3b9deba3',
             'https://cdn.discordapp.com/attachments/1440105986202275921/1440108711699021936/AA2.gif?ex=691cf540&is=691ba3c0&hm=6165ad119c7618977197e71db124401bd4d57d2e5c8dd3caf17815a27959970f&',
             'https://cdn.discordapp.com/attachments/1440105986202275921/1440108712122519664/AA3.gif?ex=691cf540&is=691ba3c0&hm=ed03596194d443dfc394a47c5e6c7a6ba18473f99e0b443dbbaa164285d25efa&',
@@ -396,7 +396,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         webos: '¡CHINGA TU MADRE WEY!',
         pelon: '¡SAPE!',
         añoña: '¡UN CULIACÁN MOVE!',
-        AA: '¡ATTITUDE ADJUSTMENT!'
+        attitude: '¡ATTITUDE ADJUSTMENT!'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
