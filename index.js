@@ -422,6 +422,14 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1443011649064796450/1443011938916503583/rod3.gif?ex=69278518&is=69263398&hm=86c6ee75a07e1e1bc2a140665009be1365d549dc8d23d3603cdf2a35b1006f58&',
             'https://cdn.discordapp.com/attachments/1443011649064796450/1443011939298054206/rod4.gif?ex=69278518&is=69263398&hm=18942c351211a43339b70783fd826284c504e0ca7d39896966d3df3ea693b02d&',
             'https://cdn.discordapp.com/attachments/1443011649064796450/1443011939642118334/rod5.gif?ex=69278518&is=69263398&hm=99a0364b73a7a20afc9ca0f6470d75160ed4f804bf13554887065994a509aa13&'
+        ],
+        guitarrazo: [
+            'https://cdn.discordapp.com/attachments/1443675223965827206/1443676099614736394/guitarrazo1.gif?ex=6929efa4&is=69289e24&hm=f46d6885f5d9da9e056e6459d50d3501e311494653213fce43f353d647b6d3a6&',
+            'https://cdn.discordapp.com/attachments/1443675223965827206/1443676100046880920/guitarrazo2.gif?ex=6929efa4&is=69289e24&hm=42cc6ea30a0df682198fd6d054946b7432851717d781a2234b49d64787caa145&',
+            'https://cdn.discordapp.com/attachments/1443675223965827206/1443676101166633011/guitarrazo3.gif?ex=6929efa4&is=69289e24&hm=162212959c49a12672d27396b306872a7036132779a54b02a0deb06e685bb3aa&',
+            'https://cdn.discordapp.com/attachments/1443675223965827206/1443676101996970015/guitarrazo4.gif?ex=6929efa4&is=69289e24&hm=450fe77ce32daa23e2fe62fded302f8f05e1d1a37adb8388aecacedf0073dc7c&',
+            'https://cdn.discordapp.com/attachments/1443675223965827206/1443676102521520190/guitarrazo5.gif?ex=6929efa5&is=69289e25&hm=6c834660168acafb6996b3e06580eef66990bb68e66c37c198288576939873c7&',
+            'https://cdn.discordapp.com/attachments/1443675223965827206/1443676103112654979/guitarrazo6.gif?ex=6929efa5&is=69289e25&hm=a80e443932afb2daa918e37678a7435942e9aee0fe9e8feae50e1bfdbecf6ead&'
         ]
     };
     const titles = {
@@ -451,7 +459,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         attitude: '¡ATTITUDE ADJUSTMENT!',
         gushi: '¡E YA WE!',
         zambra: '¡YEET!',
-        rod: '¡A LA CÁRCEL!'
+        rod: '¡A LA CÁRCEL!',
+        guitarrazo: 'Es un solo... Es la guitarra de Lolo.'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
