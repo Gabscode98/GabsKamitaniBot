@@ -242,7 +242,15 @@ const commands = [
         option.setName('objetivo')
         .setDescription('Usuario al que le harás un rod')
         .setRequired(true)
-    ),      
+    ), 
+    new SlashCommandBuilder()
+    .setName('guitarrazo')
+    .setDescription('Le aplicarás un guitarrazo a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un guitarrazo')
+        .setRequired(true)
+    ),         
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
