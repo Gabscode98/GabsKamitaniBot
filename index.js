@@ -539,7 +539,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         gun: '¡HE S GOT A GUN!',
         hoyo: '3 en el hoyo, pendejo',
         madre: 'ANTES QUE ME APAGUEN EL MICRÓFONO, CHINGUEN A SU MADRE TODOS',
-        huevos: 'Tu, eres el ídolo de los niños, ¿por que me pegas en los huevos cabrón?',
+        huevos: 'Tu, eres el ídolo de los niños',
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
