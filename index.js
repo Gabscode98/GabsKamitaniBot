@@ -6,7 +6,7 @@ import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuil
 import { topMovimientosHandler, registrarMovimiento } from './topMovimientos.js';
 import('./server.js'); // Inicia tu server Express
 function esVideo(url) {
-    return url.endsWith(".mp4") || url.endsWith(".mov") || url.endsWith(".webm");
+    return url.endsWith(".mp4") || url.endsWith(".mov") || url.endsWith(".webm") || url.endsWith("raw.githubusercontent.com");
 }
 
 console.log('TOKEN:', process.env.DISCORD_TOKEN);
