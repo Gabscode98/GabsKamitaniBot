@@ -251,6 +251,14 @@ const commands = [
         .setDescription('Usuario al que le harás un guitarrazo')
         .setRequired(true)
     ),         
+    new SlashCommandBuilder()
+    .setName('pendejo')
+    .setDescription('Le aplicarás un pendejo a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un pendejo')
+        .setRequired(true)
+    ), 
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -438,6 +446,9 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1443675223965827206/1443676101996970015/guitarrazo4.gif?ex=6929efa4&is=69289e24&hm=450fe77ce32daa23e2fe62fded302f8f05e1d1a37adb8388aecacedf0073dc7c&',
             'https://cdn.discordapp.com/attachments/1443675223965827206/1443676102521520190/guitarrazo5.gif?ex=6929efa5&is=69289e25&hm=6c834660168acafb6996b3e06580eef66990bb68e66c37c198288576939873c7&',
             'https://cdn.discordapp.com/attachments/1443675223965827206/1443676103112654979/guitarrazo6.gif?ex=6929efa5&is=69289e25&hm=a80e443932afb2daa918e37678a7435942e9aee0fe9e8feae50e1bfdbecf6ead&'
+        ],
+        pendejo: [
+            'https://cdn.discordapp.com/attachments/1445267563234857090/1445270083273363496/pendejo1.mp4?ex=692fbc27&is=692e6aa7&hm=46519e34bdff564fa7a0b73af03d6252e0fb8c2a513671646acd9410bec865a0&'
         ]
     };
     const titles = {
@@ -468,7 +479,8 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         gushi: '¡E YA WE!',
         zambra: '¡YEET!',
         rod: '¡A LA CÁRCEL!',
-        guitarrazo: 'Es un solo... Es la guitarra de Lolo.'
+        guitarrazo: 'Es un solo... Es la guitarra de Lolo.',
+        pendejo: 'Eres un PENDEJO'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
