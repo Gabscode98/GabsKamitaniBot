@@ -287,14 +287,6 @@ const commands = [
         .setRequired(true)
     ), 
     new SlashCommandBuilder()
-    .setName('hoyo')
-    .setDescription('Le aplicarás un tres en el hoyo a')
-    .addUserOption(option =>
-        option.setName('objetivo')
-        .setDescription('Usuario al que le harás un tres en el hoyo')
-        .setRequired(true)
-    ), 
-    new SlashCommandBuilder()
     .setName('huevos')
     .setDescription('Le aplicarás un huevos a')
     .addUserOption(option =>
@@ -538,7 +530,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         pendejo: 'Eres un PENDEJO',
         gun: '¡HE S GOT A GUN!',
         hoyo: '3 en el hoyo',
-        madre: 'ANTES QUE ME APAGUEN EL MICRÓFONO, CHINGUEN A SU MADRE TODOS',
+        madre: 'ANTES QUE ME APAGUEN EL MICRÓFONO',
         huevos: 'Tu, eres el ídolo de los niños',
     };
 //----------------------------Lógica------------------------------
