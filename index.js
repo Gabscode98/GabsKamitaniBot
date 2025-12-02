@@ -451,7 +451,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
             'https://cdn.discordapp.com/attachments/1443675223965827206/1443676103112654979/guitarrazo6.gif?ex=6929efa5&is=69289e25&hm=a80e443932afb2daa918e37678a7435942e9aee0fe9e8feae50e1bfdbecf6ead&'
         ],
         pendejo: [
-            'https://cdn.discordapp.com/attachments/1445267563234857090/1445270083273363496/pendejo1.mp4?ex=692fbc27&is=692e6aa7&hm=46519e34bdff564fa7a0b73af03d6252e0fb8c2a513671646acd9410bec865a0&'
+            'https://github.com/Gabscode98/GabsKamitaniBot-Videos/blob/main/pendejo1.mp4'
         ]
     };
     const titles = {
