@@ -537,7 +537,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         guitarrazo: 'Es un solo... Es la guitarra de Lolo.',
         pendejo: 'Eres un PENDEJO',
         gun: '¡HE S GOT A GUN!',
-        hoyo: '3 en el hoyo, pendejo',
+        hoyo: '3 en el hoyo',
         madre: 'ANTES QUE ME APAGUEN EL MICRÓFONO, CHINGUEN A SU MADRE TODOS',
         huevos: 'Tu, eres el ídolo de los niños',
     };
