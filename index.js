@@ -262,6 +262,46 @@ const commands = [
         .setDescription('Usuario al que le harás un pendejo')
         .setRequired(true)
     ), 
+    new SlashCommandBuilder()
+    .setName('gun')
+    .setDescription('Le aplicarás un gun a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un gun')
+        .setRequired(true)
+    ), 
+    new SlashCommandBuilder()
+    .setName('madre')
+    .setDescription('Le aplicarás una aventada de madre a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás una aventada de madre')
+        .setRequired(true)
+    ), 
+    new SlashCommandBuilder()
+    .setName('hoyo')
+    .setDescription('Le aplicarás un tres en el hoyo a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un tres en el hoyo')
+        .setRequired(true)
+    ), 
+    new SlashCommandBuilder()
+    .setName('hoyo')
+    .setDescription('Le aplicarás un tres en el hoyo a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un tres en el hoyo')
+        .setRequired(true)
+    ), 
+    new SlashCommandBuilder()
+    .setName('huevos')
+    .setDescription('Le aplicarás un huevos a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás un huevos')
+        .setRequired(true)
+    ), 
 ].map(cmd => cmd.toJSON());
 
 //---------------------------------Registrar los comandos en Discord------------------------
@@ -452,6 +492,18 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         ],
         pendejo: [
             'https://github.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/pendejo1.mp4'
+        ],
+        gun: [
+            'https://github.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/gotagun.mp4'
+        ],
+        hoyo: [
+            'https://github.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/tresenelhoyo.mp4'
+        ],
+        huevos: [
+            'https://github.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/huevos1.mp4'
+        ],
+        madre: [
+            'https://github.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/antesquemeapaguen.mp4'
         ]
     };
     const titles = {
@@ -483,7 +535,11 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         zambra: '¡YEET!',
         rod: '¡A LA CÁRCEL!',
         guitarrazo: 'Es un solo... Es la guitarra de Lolo.',
-        pendejo: 'Eres un PENDEJO'
+        pendejo: 'Eres un PENDEJO',
+        gun: '¡HE S GOT A GUN!',
+        hoyo: '3 en el hoyo, pendejo',
+        madre: 'ANTES QUE ME APAGUEN EL MICRÓFONO, CHINGUEN A SU MADRE TODOS',
+        huevos: 'Tu, eres el ídolo de los niños, ¿por que me pegas en los huevos cabrón?'
     };
 //----------------------------Lógica------------------------------
    client.on('interactionCreate', async interaction => {
