@@ -5,6 +5,9 @@ import fs from "fs";
 import { Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 import { topMovimientosHandler, registrarMovimiento } from './topMovimientos.js';
 import('./server.js'); // Inicia tu server Express
+function esVideo(url) {
+    return url.endsWith(".mp4") || url.endsWith(".mov") || url.endsWith(".webm");
+}
 
 console.log('TOKEN:', process.env.DISCORD_TOKEN);
 console.log('CLIENT_ID:', process.env.CLIENT_ID);
@@ -506,21 +509,25 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         commandName = keys[Math.floor(Math.random() * keys.length)];
     }
 
-    // GIF y título
-    const gifList = gifs[commandName];
-    const gif = gifList[Math.floor(Math.random() * gifList.length)];
-    const title = titles[commandName] || '💥 ACCIÓN';
+// GIF y título
+const gifList = gifs[commandName];
+const gif = gifList[Math.floor(Math.random() * gifList.length)];
+const title = titles[commandName] || '💥 ACCIÓN';
 
-    // Registrar movimiento
-    registrarMovimiento(commandName);
-    // guardar último movimiento utilizado
-    fs.writeFileSync("./lastMove.json", JSON.stringify({
+// Registrar movimiento
+registrarMovimiento(commandName);
+
+// Guardar último movimiento
+fs.writeFileSync("./lastMove.json", JSON.stringify({
     move: commandName,
     user: interaction.user.username
 }));
 
+// ------------- ENVÍO PRO (GIF / VIDEO) -------------    
+let embed = null;
 
-    const embed = new EmbedBuilder()
+if (!esVideo(gif)) {
+    embed = new EmbedBuilder()
         .setTitle(title)
         .setDescription(`${interaction.user} le aplicó un **${commandName.toUpperCase()}** a ${objetivo}!`)
         .setImage(gif)
@@ -529,5 +536,14 @@ const rest = new REST({ version: '10'}).setToken(process.env.DISCORD_TOKEN);
         .setTimestamp();
 
     await interaction.reply({ embeds: [embed] });
+    return;
+}
+
+// Si es video
+await interaction.reply({
+    content: `${interaction.user} le aplicó un **${commandName.toUpperCase()}** a ${objetivo}!`,
+    files: [gif]
 });
+
+}); // ← CIERRE CORRECTO DEL EVENTO
 client.login(process.env.DISCORD_TOKEN);
