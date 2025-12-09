@@ -176,3 +176,4 @@
             'https://github.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/antesquemeapaguen.mp4'
         ]
     };
+        export default gifs;

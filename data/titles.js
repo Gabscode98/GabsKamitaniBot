@@ -33,3 +33,4 @@
         madre: 'ANTES QUE ME APAGUEN EL MICRÓFONO',
         huevos: 'Tu, eres el ídolo de los niños',
     };
+       export default titles;
