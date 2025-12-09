@@ -1,29 +1,26 @@
-import { REST, Routes, SlashCommandBuilder } from 'discord.js';
-import 'dotenv/config';
-
-console.log('TOKEN:', process.env.DISCORD_TOKEN);
-console.log('CLIENT_ID:', process.env.CLIENT_ID);
-console.log('GUILD_ID:', process.env.GUILD_ID);
+import { REST, Routes, SlashCommandBuilder } from "discord.js";
+import "dotenv/config";
 
 const commands = [
   new SlashCommandBuilder()
-    .setName('topmovimientos')
-    .setDescription('Muestra el top 5 de movimientos más usados'),
+    .setName("ping")
+    .setDescription("Verifica si el bot responde")
+].map(c => c.toJSON());
 
-  new SlashCommandBuilder()
-    .setName('status')
-    .setDescription('Muestra el estado PRO del bot')
-].map(cmd => cmd.toJSON());
+const rest = new REST({ version: "10" }).setToken(process.env.DISCORD_TOKEN);
 
-const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
-
-try {
-  console.log('Registrando comandos en el servidor...');
-  await rest.put(
-    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
-    { body: commands }
-  );
-  console.log('✅ Comandos registrados correctamente');
-} catch (error) {
-  console.error('❌ Error al registrar comandos:', error);
-}
+(async () => {
+  try {
+    console.log("Registrando comando de prueba...");
+    await rest.put(
+      Routes.applicationGuildCommands(
+        process.env.CLIENT_ID,
+        process.env.GUILD_ID
+      ),
+      { body: commands }
+    );
+    console.log("✅ Comando PING registrado");
+  } catch (error) {
+    console.error("❌ Error:", error);
+  }
+})();
