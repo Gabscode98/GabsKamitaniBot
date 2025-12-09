@@ -5,7 +5,7 @@
   "mesa": 0,
   "silla": 21,
   "escalera": 0,
-  "yayo": 1,
+  "yayo": 2,
   "phoenixsplash": 0,
   "hijackbomb": 0,
   "claymore": 1,
@@ -26,5 +26,9 @@
   "zambra": 5,
   "rod": 1,
   "guitarrazo": 1,
-  "pendejo": 10
+  "pendejo": 12,
+  "huevos": 6,
+  "hoyo": 3,
+  "gun": 2,
+  "madre": 2
 }
