@@ -161,19 +161,19 @@
             'https://cdn.discordapp.com/attachments/1443675223965827206/1443676103112654979/guitarrazo6.gif?ex=6929efa5&is=69289e25&hm=a80e443932afb2daa918e37678a7435942e9aee0fe9e8feae50e1bfdbecf6ead&'
         ],
         pendejo: [
-            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/pendejo1.mp4'
+            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/main/pendejo1.mp4'
         ],
         gun: [
-            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/gotagun.mp4'
+            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/main/gotagun.mp4'
         ],
         hoyo: [
-            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/tresenelhoyo.mp4'
+            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/main/tresenelhoyo.mp4'
         ],
         huevos: [
-            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/huevos1.mp4'
+            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/main/huevos1.mp4'
         ],
         madre: [
-            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/raw/refs/heads/main/antesquemeapaguen.mp4'
+            'https://raw.githubusercontent.com/Gabscode98/GabsKamitaniBot-Videos/main/antesquemeapaguen.mp4'
         ]
     };
         export default gifs;
