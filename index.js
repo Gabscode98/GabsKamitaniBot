@@ -26,7 +26,7 @@ client.once("ready", () => {
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
-  // 🛑 EVITA "Unknown interaction"
+  // 🛑 Evita "Unknown interaction"
   await interaction.deferReply();
 
   const commandName = interaction.commandName;
@@ -65,10 +65,9 @@ client.on("interactionCreate", async (interaction) => {
       return await interaction.editReply({ embeds: [embed] });
     }
 
-    // 🎬 VIDEO → ARCHIVO
+    // 🎬 VIDEO → EMBEBIDO (NO files)
     return await interaction.editReply({
-      content: texto,
-      files: [gif],
+      content: `${texto}\n${gif}`,
     });
   }
 
@@ -112,8 +111,7 @@ client.on("interactionCreate", async (interaction) => {
     }
 
     return await interaction.editReply({
-      content: texto,
-      files: [gif],
+      content: `${texto}\n${gif}`,
     });
   }
 
