@@ -1,85 +1,130 @@
 import "dotenv/config";
-import { Client, GatewayIntentBits } from "discord.js";
+import { Client, GatewayIntentBits, EmbedBuilder } from "discord.js";
+import fs from "fs";
+
+// Server express (opcional)
 import("./server.js");
+
+// Data
 import gifs from "./data/gifs.js";
 import titles from "./data/titles.js";
+
+// Utils
 import esVideo from "./utils/esVideo.js";
-import fs from "fs";
-import { EmbedBuilder } from "discord.js";
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+// Client
+const client = new Client({
+  intents: [GatewayIntentBits.Guilds],
+});
 
-
+// READY
 client.once("ready", () => {
   console.log(`✅ Bot listo como: ${client.user.tag}`);
 });
 
-client.on("interactionCreate", async interaction => {
+// INTERACTIONS
+client.on("interactionCreate", async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
-  // ✅ RESERVA LA INTERACCIÓN (anti "Unknown interaction")
+  // 🛑 EVITA "Unknown interaction"
   await interaction.deferReply();
 
   const commandName = interaction.commandName;
 
+  // =========================
+  // 🎥 COMANDOS DE MOVIMIENTOS
+  // =========================
   if (commandName in gifs) {
+    const objetivo = interaction.options.getUser("objetivo");
 
-  const objetivo = interaction.options.getUser("objetivo"); // 👈 AQUÍ SE LEE EL RIVAL
-  const gifList = gifs[commandName];
-  const gif = gifList[Math.floor(Math.random() * gifList.length)];
-  const title = titles[commandName] || "💥 ACCIÓN";
+    const gifList = gifs[commandName];
+    const gif = gifList[Math.floor(Math.random() * gifList.length)];
+    const title = titles[commandName] || "💥 ACCIÓN";
 
-  // Guardar último movimiento
-  fs.writeFileSync("./data/lastMove.json", JSON.stringify({
-    move: commandName,
-    user: interaction.user.username
-  }));
+    // Guardar último movimiento
+    fs.writeFileSync(
+      "./data/lastMove.json",
+      JSON.stringify({
+        move: commandName,
+        user: interaction.user.username,
+      })
+    );
 
-  // ✅ TEXTO CON RIVAL
-  const texto = `${interaction.user} aplicó **${commandName.toUpperCase()}** a ${objetivo}`;
+    const texto = `${interaction.user} aplicó **${commandName.toUpperCase()}** a ${objetivo}`;
 
-  // GIF
-  if (!esVideo(gif)) {
-    const embed = new EmbedBuilder()
-      .setTitle(title)
-      .setDescription(texto)
-      .setImage(gif)
-      .setColor("Red")
-      .setFooter({ text: "Bot creado por GabsKamitani 🔥" })
-      .setTimestamp();
+    // 🖼️ GIF → EMBED
+    if (!esVideo(gif)) {
+      const embed = new EmbedBuilder()
+        .setTitle(title)
+        .setDescription(texto)
+        .setImage(gif)
+        .setColor("Red")
+        .setFooter({ text: "Bot creado por GabsKamitani 🔥" })
+        .setTimestamp();
 
-    return await interaction.editReply({ embeds: [embed] });
+      return await interaction.editReply({ embeds: [embed] });
+    }
+
+    // 🎬 VIDEO → ARCHIVO
+    return await interaction.editReply({
+      content: texto,
+      files: [gif],
+    });
   }
 
-  // VIDEO
-  return await interaction.reply({
-    content: texto,
-    files: [gif]
-  });
-}
-
-  // ✅ COMANDO PING
-  if (interaction.commandName === "ping") {
-    return interaction.reply("🏓 Pong funcionando correctamente");
+  // =================
+  // 🏓 COMANDO PING
+  // =================
+  if (commandName === "ping") {
+    return await interaction.editReply("🏓 Pong funcionando correctamente");
   }
 
-  // ✅ COMANDO STATUS (si ya tienes status.js listo)
-  if (interaction.commandName === "status") {
+  // =================
+  // 📊 COMANDO STATUS
+  // =================
+  if (commandName === "status") {
     const statusHandler = (await import("./status.js")).default;
-    return statusHandler(interaction, client);
+    return statusHandler(interaction, client, gifs);
   }
 
-  // ✅ COMANDO RANDOM (provisional)
-  if (interaction.commandName === "random") {
-    return interaction.reply("🎲 Random funcionando correctamente");
+  // =================
+  // 🎲 COMANDO RANDOM
+  // =================
+  if (commandName === "random") {
+    const keys = Object.keys(gifs);
+    const randomMove = keys[Math.floor(Math.random() * keys.length)];
+
+    const gifList = gifs[randomMove];
+    const gif = gifList[Math.floor(Math.random() * gifList.length)];
+    const title = titles[randomMove] || "💥 RANDOM";
+
+    const texto = `${interaction.user} aplicó **${randomMove.toUpperCase()}**`;
+
+    if (!esVideo(gif)) {
+      const embed = new EmbedBuilder()
+        .setTitle(title)
+        .setDescription(texto)
+        .setImage(gif)
+        .setColor("Orange")
+        .setTimestamp();
+
+      return await interaction.editReply({ embeds: [embed] });
+    }
+
+    return await interaction.editReply({
+      content: texto,
+      files: [gif],
+    });
   }
 
-  // ✅ SI NO COINCIDE NINGUNO
-  return interaction.reply({
+  // =========================
+  // ⚠️ FALLBACK
+  // =========================
+  return await interaction.editReply({
     content: "⚠️ Comando reconocido pero sin lógica aún.",
-    ephemeral: true
+    ephemeral: true,
   });
 });
 
+// LOGIN
 client.login(process.env.DISCORD_TOKEN);
-
