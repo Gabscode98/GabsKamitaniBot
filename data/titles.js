@@ -32,5 +32,6 @@
         hoyo: '3 en el hoyo',
         madre: 'ANTES QUE ME APAGUEN EL MICRÓFONO',
         huevos: 'Tu, eres el ídolo de los niños',
+        nuevaera: '¿Como que nueva era?, vete a la vrga'
     };
        export default titles;

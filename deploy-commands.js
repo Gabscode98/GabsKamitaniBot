@@ -282,6 +282,14 @@ const commands = [
         .setDescription('Usuario al que le harás un huevos')
         .setRequired(true)
     ), 
+    new SlashCommandBuilder()
+    .setName('nuevaera')
+    .setDescription('Le aplicarás una nueva era a')
+    .addUserOption(option =>
+        option.setName('objetivo')
+        .setDescription('Usuario al que le harás una nueva era')
+        .setRequired(true)
+    ), 
 ].map(cmd => cmd.toJSON());
 
 

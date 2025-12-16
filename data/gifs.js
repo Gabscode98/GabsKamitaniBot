@@ -174,6 +174,9 @@
         ],
         madre: [
             'https://res.cloudinary.com/dplkljzoz/video/upload/antesquemeapaguen_xtdpry.mp4'
+        ],
+        nuevaera: [
+            'https://res.cloudinary.com/dplkljzoz/video/upload/nuevaera_cegowb.mp4'
         ]
     };
         export default gifs;
